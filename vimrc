@@ -1,3 +1,10 @@
+syntax on
+set t_Co=256
+" Color Scheme
+
+colorscheme molokai
+
+" Basic Setup
 set showcmd
 set showmatch
 set showmode
@@ -20,11 +27,13 @@ if !&sidescrolloff
     set sidescrolloff=5
 endif
 
+if exists(':tnoremap')
+    tnoremap <Esc> <C-\><C-n>
+endif
+
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
 Plug 'tpope/vim-sensible'
 
 call plug#end()
-
-
