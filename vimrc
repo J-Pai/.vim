@@ -31,6 +31,10 @@ if exists(':tnoremap')
     tnoremap <Esc> <C-\><C-n>
 endif
 
+if exists(':terminal')
+    map <C-v> :terminal <CR>
+endif
+
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
