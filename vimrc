@@ -20,6 +20,8 @@ set shiftwidth=4
 set splitbelow
 set splitright
 
+set colorcolumn=80
+
 if !&scrolloff
     set scrolloff=3
 endif
