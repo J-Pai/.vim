@@ -1,4 +1,4 @@
-## VIM/NEOVIM Configuration Files
+# VIM/NEOVIM Configuration Files
 
 Clone and begin using.
 
@@ -15,7 +15,7 @@ Open up Vim/NeoVim and type:
 ```
 Add new plugins to vimrc file's plugin manager section. Specify github page.
 
-## Complete vim Bindings
+# Complete vim Bindings
 https://hea-www.harvard.edu/~fine/Tech/vi.html
-# Modifications
+## Modifications
 * Ctrl + s (NeoVim Only): Open Terminal
