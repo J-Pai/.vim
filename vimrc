@@ -35,5 +35,5 @@ endif
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
 Plug 'tpope/vim-sensible'
-
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
