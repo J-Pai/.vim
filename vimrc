@@ -20,7 +20,7 @@ if !&sidescrolloff
     set sidescrolloff=5
 endif
 
-" Initialize Plugin Manager
+" Plugin Manager
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
 Plug 'tpope/vim-sensible'
