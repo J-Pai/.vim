@@ -32,12 +32,17 @@ if exists(':tnoremap')
 endif
 
 if exists(':terminal')
-    map <C-v> :terminal <CR>
+    map <C-s> :terminal <CR>
 endif
+
+" Show Invisibles
+set listchars=tab:▸\ ,trail:·,eol:¬
+set list
 
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
 Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Yggdroot/indentLine'
 call plug#end()

@@ -18,4 +18,4 @@ Add new plugins to vimrc file's plugin manager section. Specify github page.
 ## Complete vim Bindings
 [https://hea-www.harvard.edu/~fine/Tech/vi.html]
 # Modifications
-* Ctrl + v (NeoVim Only): Open Terminal
+* Ctrl + s (NeoVim Only): Open Terminal
