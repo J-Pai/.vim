@@ -41,6 +41,10 @@ endif
 set listchars=tab:▸\ ,trail:·,eol:¬
 set list
 
+" For some unknown reason, quotation marks are hidden in json files.
+" This ensures that they are shown.
+set conceallevel=0
+
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
