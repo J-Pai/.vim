@@ -45,6 +45,8 @@ set list
 " This ensures that they are shown.
 set conceallevel=0
 
+set pastetoggle=<F2>
+
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
