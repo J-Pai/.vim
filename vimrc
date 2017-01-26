@@ -3,6 +3,7 @@ set t_Co=256
 " Color Scheme
 
 colorscheme molokai
+au BufNewFile,BufRead *.ejs set filetype=html
 
 " Basic Setup
 set showcmd
