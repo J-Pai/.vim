@@ -1,5 +1,6 @@
 syntax on
 set t_Co=256
+set conceallevel=0
 " Color Scheme
 
 colorscheme molokai
