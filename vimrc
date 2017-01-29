@@ -43,10 +43,6 @@ endif
 set listchars=tab:▸\ ,trail:·,eol:¬
 set list
 
-" For some unknown reason, quotation marks are hidden in json files.
-" This ensures that they are shown.
-set conceallevel=0
-
 set pastetoggle=<F2>
 
 " Plugin Manager
@@ -55,4 +51,5 @@ call plug#begin('~/.vim/plugins')
 Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
+Plug 'rust-lang/rust.vim'
 call plug#end()
