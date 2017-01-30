@@ -2,7 +2,7 @@
 
 Clone and begin using.
 
-Open up Vim/NeoVim and type:
+Delete original .vimrc file (if you have one), open up Vim/NeoVim and type:
 ```
 :PlugInstall
 ```
