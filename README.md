@@ -15,7 +15,6 @@ ln -s ~/.vim/autoload/ ~/.config/nvim/
 ln -s ~/.vim/colors ~/.config/nvim/
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 ```
-
 # Complete vim Bindings
 https://hea-www.harvard.edu/~fine/Tech/vi.html
 ## Modifications
