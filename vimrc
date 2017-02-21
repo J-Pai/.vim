@@ -1,6 +1,6 @@
 syntax on
 set t_Co=256
-set conceallevel=0
+" set conceallevel=0
 " Color Scheme
 
 colorscheme molokai
@@ -22,7 +22,7 @@ set shiftwidth=4
 set splitbelow
 set splitright
 
-set colorcolumn=80
+" set colorcolumn=80
 
 if !&scrolloff
     set scrolloff=3
@@ -40,7 +40,7 @@ if exists(':terminal')
 endif
 
 " Show Invisibles
-set listchars=tab:▸\ ,trail:·,eol:¬
+" set listchars=tab:▸\ ,trail:·,eol:¬
 set list
 
 set pastetoggle=<F2>
