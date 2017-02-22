@@ -40,7 +40,7 @@ if exists(':terminal')
 endif
 
 " Show Invisibles
-" set listchars=tab:▸\ ,trail:·,eol:¬
+set listchars=tab:>\ ,trail:·,eol:¬
 set list
 
 set pastetoggle=<F2>
