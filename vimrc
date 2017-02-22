@@ -1,8 +1,10 @@
+scriptencoding utf-8
+set encoding=utf-8
 syntax on
 set t_Co=256
 " set conceallevel=0
-" Color Scheme
 
+" Color Scheme
 colorscheme molokai
 au BufNewFile,BufRead *.ejs set filetype=html
 
@@ -40,8 +42,7 @@ if exists(':terminal')
 endif
 
 " Show Invisibles
-set listchars=tab:>\ ,trail:·,eol:¬
-set list
+set list listchars=tab:>\ ,trail:·,eol:¬
 
 set pastetoggle=<F2>
 
