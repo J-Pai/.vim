@@ -51,6 +51,6 @@ call plug#begin('~/.vim/plugins')
 " Add Plugins here...
 Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'rust-lang/rust.vim'
 call plug#end()
