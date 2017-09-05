@@ -15,6 +15,11 @@ ln -s ~/.vim/autoload/ ~/.config/nvim/
 ln -s ~/.vim/colors ~/.config/nvim/
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 ```
+The plugin YouCompleteMe requires some more configuration prior to use. You may see some errors when starting up your vim instance. If you do not want to use YouCompleteMe, simply edit the vimrc file and remove the following line:
+```bash
+Plug 'Valloric/YouCompleteMe'
+```
+
 # Complete vim Bindings
 https://hea-www.harvard.edu/~fine/Tech/vi.html
 ## Modifications
