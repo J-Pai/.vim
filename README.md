@@ -19,7 +19,10 @@ The plugin YouCompleteMe requires some more configuration prior to use. You may 
 ```bash
 Plug 'Valloric/YouCompleteMe'
 ```
-
+Open vim again and issue the following command to remove YouCompleteMe:
+```
+:PlugClean
+```
 # Complete vim Bindings
 https://hea-www.harvard.edu/~fine/Tech/vi.html
 ## Modifications
