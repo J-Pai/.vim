@@ -46,6 +46,8 @@ set list listchars=tab:>\ ,trail:·,eol:¬
 
 set pastetoggle=<F2>
 
+let g:python_host_prog = '/usr/bin/python'
+
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
@@ -53,4 +55,5 @@ Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'rust-lang/rust.vim'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
