@@ -7,7 +7,6 @@ set conceallevel=0
 " Color Scheme
 colorscheme molokai
 au BufNewFile,BufRead *.ejs set filetype=html
-
 " Basic Setup
 set showcmd
 set showmatch
@@ -45,7 +44,6 @@ endif
 set list listchars=tab:>\ ,trail:·,eol:¬
 
 set pastetoggle=<F2>
-
 let g:python_host_prog = '/usr/bin/python'
 
 " Plugin Manager
@@ -56,4 +54,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'rust-lang/rust.vim'
 Plug 'Valloric/YouCompleteMe'
+
 call plug#end()
+
+if filereadable(expand('~/.vim/plugins/YouCompleteMe/README.md'))
+    nnoremap <leader>j :YcmCompleter GoTo<CR>
+endif
