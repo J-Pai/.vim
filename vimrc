@@ -58,5 +58,5 @@ Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 if filereadable(expand('~/.vim/plugins/YouCompleteMe/README.md'))
-    nnoremap <leader>j :split <bar> YcmCompleter GoTo<CR>
+    nnoremap <leader>j YcmCompleter GoTo<CR>
 endif
