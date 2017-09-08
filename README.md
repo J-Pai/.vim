@@ -28,3 +28,4 @@ https://hea-www.harvard.edu/~fine/Tech/vi.html
 ## Modifications
 * Ctrl + s (NeoVim Only): Open Terminal
 * F2: toggle paste on/off
+* \ + j (Only if YouCompleteMe is installed): YcmCompleter GoTo keyboard shortcut
