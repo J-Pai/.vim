@@ -6,7 +6,9 @@ set conceallevel=0
 
 " Color Scheme
 colorscheme molokai
+hi Normal guibg=NONE ctermbg=NONE
 au BufNewFile,BufRead *.ejs set filetype=html
+
 " Basic Setup
 set showcmd
 set showmatch
@@ -53,7 +55,7 @@ Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'rust-lang/rust.vim'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
