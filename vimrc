@@ -55,6 +55,7 @@ Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'rust-lang/rust.vim'
+Plug 'leafgarland/typescript-vim'
 " Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
