@@ -25,7 +25,7 @@ Open vim again and issue the following command to remove YouCompleteMe:
 ```
 # Complete vim Bindings
 https://hea-www.harvard.edu/~fine/Tech/vi.html
-## Modifications
+## Modifications and Useful Commands
 * Ctrl + s (NeoVim Only): Open Terminal
 * F2: toggle paste on/off
 * \ + j (Only if YouCompleteMe is installed): YcmCompleter GoTo keyboard shortcut
