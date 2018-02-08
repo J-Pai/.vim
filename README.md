@@ -3,7 +3,7 @@
 Clone and begin using.
 
 Delete original .vimrc file (if you have one), open up Vim/NeoVim and type:
-```
+```bash
 :PlugInstall
 ```
 Add new plugins to vimrc file's plugin manager section. Specify github page.
@@ -20,7 +20,7 @@ The plugin YouCompleteMe requires some more configuration prior to use. You may 
 Plug 'Valloric/YouCompleteMe'
 ```
 Open vim again and issue the following command to remove YouCompleteMe:
-```
+```bash
 :PlugClean
 ```
 # Complete vim Bindings
@@ -29,3 +29,8 @@ https://hea-www.harvard.edu/~fine/Tech/vi.html
 * Ctrl + s (NeoVim Only): Open Terminal
 * F2: toggle paste on/off
 * \ + j (Only if YouCompleteMe is installed): YcmCompleter GoTo keyboard shortcut
+* Key command for reindenting file:
+                                        ```
+                                        gg=G
+                                        ```
+
