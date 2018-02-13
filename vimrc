@@ -19,8 +19,8 @@ set mouse=a
 set formatoptions+=o
 set textwidth=0
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 set splitbelow
 set splitright
@@ -57,6 +57,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'rust-lang/rust.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'alvan/vim-closetag'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 " Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
@@ -66,8 +68,8 @@ if filereadable(expand('~/.vim/plugins/YouCompleteMe/README.md'))
 endif
 
 if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
-    let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
-    let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb'
+    let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
+    let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js'
     let g:closetag_emptyTags_caseSensitive = 1
     let g:closetag_shortcut = '>'
     let g:closetag_close_shortcut = '<leader>>'
