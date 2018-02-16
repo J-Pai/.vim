@@ -48,6 +48,9 @@ set list listchars=tab:>\ ,trail:·,eol:¬
 set pastetoggle=<F2>
 let g:python_host_prog = '/usr/bin/python'
 
+" Remove trailing whitespace on save
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
@@ -74,3 +77,11 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
     let g:closetag_shortcut = '>'
     let g:closetag_close_shortcut = '<leader>>'
 endif
+
+
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun<Paste>
