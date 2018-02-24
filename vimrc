@@ -84,4 +84,4 @@ function! <SID>StripTrailingWhitespaces()
     let c = col(".")
     %s/\s\+$//e
     call cursor(l, c)
-endfun<Paste>
+endfun
