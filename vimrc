@@ -57,13 +57,14 @@ call plug#begin('~/.vim/plugins')
 Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
-Plug 'rust-lang/rust.vim'
-Plug 'leafgarland/typescript-vim'
+
+"JavaScript Plugins
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-" Plug 'Valloric/YouCompleteMe'
 
+" YCM requires setup. Uncomment if you know how to set it up.
+" Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 if filereadable(expand('~/.vim/plugins/YouCompleteMe/README.md'))
