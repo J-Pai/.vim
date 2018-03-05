@@ -39,7 +39,7 @@ if exists(':tnoremap')
 endif
 
 if exists(':terminal')
-    map <C-s> :split <bar> terminal <CR> <Insert>
+    map <C-s> :split <bar> :set nonumber <bar> terminal <CR> <Insert>
 endif
 
 " Show Invisibles
