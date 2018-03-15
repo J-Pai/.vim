@@ -62,6 +62,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'jparise/vim-graphql'
 
 " YCM requires setup. Uncomment if you know how to set it up.
 " Plug 'Valloric/YouCompleteMe'
