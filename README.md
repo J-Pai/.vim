@@ -23,7 +23,7 @@ Open vim again and issue the following command to remove YouCompleteMe:
 ```bash
 :PlugClean
 ```
-# Complete vim Bindings
+## Complete vim Bindings
 https://hea-www.harvard.edu/~fine/Tech/vi.html
 ## Modifications and Useful Commands
 * Ctrl + s (NeoVim Only): Open Terminal
@@ -33,7 +33,7 @@ https://hea-www.harvard.edu/~fine/Tech/vi.html
                                         ```
                                         gg=G
                                         ```
-# Notes on Unexpected Characters in NVIM
+## Notes on Unexpected Characters in NVIM
 If you see strange characters in other terminals such as lxterminal, add the following line to ~/.profile.
 ```bash
 export VTE_VERSION="100"
