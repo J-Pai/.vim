@@ -7,7 +7,6 @@ set conceallevel=0
 " Color Scheme
 colorscheme molokai
 hi Normal guibg=NONE ctermbg=NONE
-autocmd FileType ejs set filetype=html
 
 " Basic Setup
 set showcmd
@@ -25,7 +24,7 @@ set tabstop=4
 set shiftwidth=4
 
 " File type specific tabbing
-autocmd FileType javascript set tabstop=2 shiftwidth=2
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 
 set splitbelow
 set splitright
