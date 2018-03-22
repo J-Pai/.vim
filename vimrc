@@ -24,7 +24,7 @@ set tabstop=4
 set shiftwidth=4
 
 " File type specific tabbing
-autocmd BufNewFile,BufRead .jsx setlocal tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *.jsx setlocal tabstop=2 shiftwidth=2
 " Comment line above and uncomment line below to set all JS type files to
 " tabbing of 2 spaces.
 "autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
