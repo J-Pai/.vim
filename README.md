@@ -40,3 +40,5 @@ export VTE_VERSION="100"
 ```
 ## vim-airline Notes
 vim-airline is a plugin that provides a nicer looking status line, similarily to how powerline works for standard shells. If the statusline looks weird after installation or if you do not have powerline fonts installed, simply set the variable g:airline_powerline_fonts to 0.
+
+This variable can be found (already set to 1) in the vimrc file.
