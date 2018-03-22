@@ -7,7 +7,7 @@ set conceallevel=0
 " Color Scheme
 colorscheme molokai
 hi Normal guibg=NONE ctermbg=NONE
-au BufNewFile,BufRead *.ejs set filetype=html
+autocmd FileType ejs set filetype=html
 
 " Basic Setup
 set showcmd
@@ -19,8 +19,13 @@ set mouse=a
 set formatoptions+=o
 set textwidth=0
 set expandtab
+
+" Generic tabbing.
 set tabstop=4
 set shiftwidth=4
+
+" File type specific tabbing
+autocmd FileType javascript set tabstop=2 shiftwidth=2
 
 set splitbelow
 set splitright
