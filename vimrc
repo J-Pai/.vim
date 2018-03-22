@@ -24,7 +24,7 @@ set tabstop=4
 set shiftwidth=4
 
 " File type specific tabbing
-autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead .jsx setlocal tabstop=2 shiftwidth=2
 
 set splitbelow
 set splitright
