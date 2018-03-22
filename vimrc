@@ -64,6 +64,8 @@ call plug#begin('~/.vim/plugins')
 Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
 
 "JavaScript Plugins
 Plug 'alvan/vim-closetag'
@@ -74,6 +76,10 @@ Plug 'jparise/vim-graphql'
 " YCM requires setup. Uncomment if you know how to set it up.
 " Plug 'Valloric/YouCompleteMe'
 call plug#end()
+
+if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
+    let g:airline_powerline_fonts = 1
+endif
 
 if filereadable(expand('~/.vim/plugins/YouCompleteMe/README.md'))
     nnoremap <leader>j :split <bar> YcmCompleter GoTo<CR>
