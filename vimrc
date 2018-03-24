@@ -78,7 +78,7 @@ Plug 'jparise/vim-graphql'
 call plug#end()
 
 if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
-    let g:airline_powerline_fonts = 1
+    let g:airline_powerline_fonts = 0
 endif
 
 if filereadable(expand('~/.vim/plugins/YouCompleteMe/README.md'))
