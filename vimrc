@@ -58,6 +58,9 @@ let g:python_host_prog = '/usr/bin/python'
 " Remove trailing whitespace on save
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+let g:python3_host_prog = '/usr/bin/python3'
+let g:loaded_python3_provider = 1
+
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
@@ -67,24 +70,23 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 
-"JavaScript Plugins
+" JavaScript Plugins
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
 
-" YCM requires setup. Uncomment if you know how to set it up.
-Plug 'Valloric/YouCompleteMe'
+" Smart Completion Plugin (Targeted for NeoVim)
+" See: https://github.com/roxma/nvim-completion-manager
+if has('nvim')
+    Plug 'roxma/nvim-completion-manager'
+    " JavaScript Completion:
+    Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+endif
 call plug#end()
 
 if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
     let g:airline_powerline_fonts = 1
-endif
-
-if filereadable(expand('~/.vim/plugins/YouCompleteMe/README.md'))
-    let g:python3_host_prog = '/usr/bin/python3'
-    let g:loaded_python3_provider = 1
-    nnoremap <leader>j :split <bar> YcmCompleter GoTo<CR>
 endif
 
 if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
