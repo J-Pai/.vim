@@ -74,7 +74,7 @@ Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
 
 " YCM requires setup. Uncomment if you know how to set it up.
-" Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
@@ -82,6 +82,8 @@ if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
 endif
 
 if filereadable(expand('~/.vim/plugins/YouCompleteMe/README.md'))
+    let g:python3_host_prog = '/usr/bin/python3'
+    let g:loaded_python3_provider = 1
     nnoremap <leader>j :split <bar> YcmCompleter GoTo<CR>
 endif
 
