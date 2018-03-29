@@ -34,7 +34,7 @@ https://hea-www.harvard.edu/~fine/Tech/vi.html
                                         gg=G
                                         ```
 ## Notes on Unexpected Characters in NVIM
-If you see strange characters in other terminals such as lxterminal, add the following line to ~/.profile.
+If you see strange characters in other terminals such as lxterminal, add the following line to ~/.bashrc.
 ```bash
 export VTE_VERSION="100"
 ```
