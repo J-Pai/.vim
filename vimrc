@@ -99,6 +99,10 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
     let g:closetag_close_shortcut = '<leader>>'
 endif
 
+if filereadable(expand('~/.vim/plugins/nvim-completion-manager/README.md'))
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+endif
 
 function! <SID>StripTrailingWhitespaces()
     let l = line(".")
