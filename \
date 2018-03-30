@@ -66,7 +66,7 @@ call plug#begin('~/.vim/plugins')
 " Add Plugins here...
 Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Yggdroot/indentLine'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 Plug 'vim-airline/vim-airline'
@@ -86,8 +86,20 @@ if has('nvim')
 endif
 call plug#end()
 
+if filereadable(expand('~/.vim/plugins/vim-indent-guides/README.markdown'))
+    hi IndentGuidesOdd  ctermbg=black
+    hi IndentGuidesEven ctermbg=darkgrey
+    let g:indent_guides_enable_on_vim_startup = 1
+endif
+
 if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
     let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
+endif
+
+if filereadable(expand('~/.vim/plugins/nvim-completion-manager/README.md'))
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 endif
 
 if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
@@ -98,10 +110,10 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
     let g:closetag_close_shortcut = '<leader>>'
 endif
 
-
 function! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
     call cursor(l, c)
 endfun
+
