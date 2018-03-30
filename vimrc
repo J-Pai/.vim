@@ -87,6 +87,7 @@ endif
 call plug#end()
 
 if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
+    let g:airline#extensions#tabline#enabled = 1
     let g:airline_powerline_fonts = 1
 endif
 
