@@ -58,9 +58,6 @@ let g:python_host_prog = '/usr/bin/python'
 " Remove trailing whitespace on save
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-let g:python3_host_prog = '/usr/bin/python3'
-let g:loaded_python3_provider = 1
-
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
 " Add Plugins here...
