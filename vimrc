@@ -77,13 +77,15 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'jparise/vim-graphql'
 
-" Smart Completion Plugin (Targeted for NeoVim)
-" See: https://github.com/roxma/nvim-completion-manager
+" Completion Plugins
 if has('nvim')
-    Plug 'roxma/nvim-completion-manager'
-    " JavaScript Completion:
-    Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
+let g:deoplete#enable_at_startup = 1
 call plug#end()
 
 if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
@@ -97,11 +99,6 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
     let g:closetag_emptyTags_caseSensitive = 1
     let g:closetag_shortcut = '>'
     let g:closetag_close_shortcut = '<leader>>'
-endif
-
-if filereadable(expand('~/.vim/plugins/nvim-completion-manager/README.md'))
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 endif
 
 function! <SID>StripTrailingWhitespaces()
