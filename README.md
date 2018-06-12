@@ -39,3 +39,4 @@ If you have the rights to do so, you can also install the fonts for powerline.
 ```bash
 sudo apt-get install fonts-powerline
 ```
+The font that appears to have the best alignment is 12pt DejaVu Sans Mono for Powerline.
