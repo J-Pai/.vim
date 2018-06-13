@@ -82,7 +82,6 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-let g:deoplete#enable_at_startup = 1
 call plug#end()
 
 if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
@@ -96,6 +95,11 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
     let g:closetag_emptyTags_caseSensitive = 1
     let g:closetag_shortcut = '>'
     let g:closetag_close_shortcut = '<leader>>'
+endif
+
+if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
+    let g:deoplete#enable_at_startup = 1
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 endif
 
 function! <SID>StripTrailingWhitespaces()
