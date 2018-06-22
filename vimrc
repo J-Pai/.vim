@@ -24,7 +24,7 @@ set tabstop=4
 set shiftwidth=4
 
 " File type specific tabbing
-autocmd BufNewFile,BufRead *.jsx setlocal tabstop=4 shiftwidth=4
+" autocmd BufNewFile,BufRead *.jsx setlocal tabstop=2 shiftwidth=2
 " Comment line above and uncomment line below to set all JS type files to
 " tabbing of 2 spaces.
 " autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
@@ -76,11 +76,12 @@ Plug 'jparise/vim-graphql'
 
 " Completion Plugins
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
 endif
 call plug#end()
 
@@ -109,6 +110,5 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-set nobackup
-set nowritebackup
-set noswapfile
+set exrc
+set secure

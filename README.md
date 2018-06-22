@@ -1,6 +1,6 @@
 # VIM/NEOVIM Configuration Files
 
-Clone and begin using.
+Clone and begin using. This vim setup is primarily targeted for NEOVIM.
 
 Delete original .vimrc file (if you have one), open up Vim/NeoVim and type:
 ```bash
@@ -15,16 +15,20 @@ ln -s ~/.vim/autoload/ ~/.config/nvim/
 ln -s ~/.vim/colors ~/.config/nvim/
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 ```
+
+## Project Specific NeoVim/Vim Configuration
+If using VIM, create a `.vimrc` or `.exrc` file in the root directory of the project with the desired additional configurations.
+If using NEOVIM, create a `.nvimrc` file in the root directory of the project with the desired additional configurations.
+
 ## Complete vim Bindings
 https://hea-www.harvard.edu/~fine/Tech/vi.html
+
 ## Modifications and Useful Commands
 * Ctrl + s (NeoVim Only): Open Terminal
 * F2: toggle paste on/off
 * \ + j (Only if YouCompleteMe is installed): YcmCompleter GoTo keyboard shortcut
-* Key command for reindenting file:
-                                        ```
-                                        gg=G
-                                        ```
+* Key command for reindenting file: `gg=G`
+
 ## Notes on Unexpected Characters in NVIM
 If you see strange characters in other terminals such as lxterminal, add the following line to ~/.bashrc.
 ```bash
