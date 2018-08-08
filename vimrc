@@ -20,8 +20,8 @@ set textwidth=0
 set expandtab
 
 " Generic tabbing.
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 " File type specific tabbing
 " autocmd BufNewFile,BufRead *.jsx setlocal tabstop=2 shiftwidth=2
@@ -68,21 +68,19 @@ Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 Plug 'vim-airline/vim-airline'
 
-" JavaScript Plugins
-Plug 'alvan/vim-closetag'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'jparise/vim-graphql'
-
 " Completion Plugins
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'zchee/deoplete-clang'
+
+" JavaScript Plugins
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" Plug 'alvan/vim-closetag'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'jparise/vim-graphql'
+
 call plug#end()
 
 if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
@@ -99,8 +97,26 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
 endif
 
 if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
+    inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+    let $RUST_SRC_PATH='/usr/src/rust/src'
+
+    " Use deoplete.
     let g:deoplete#enable_at_startup = 1
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+    let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
+    let g:deoplete#sources#clang#clang_header ="/usr/include/clang/"
+    let g:deoplete#sources#rust#racer_binary="/usr/bin/racer"
+    let g:deoplete#sources#rust#rust_source_path="/usr/src/rust/src/"
+
+    if !exists('g:deoplete#omni#input_patterns')
+      let g:deoplete#omni#input_patterns = {}
+      endif
+
+    set completeopt-=preview
 endif
 
 function! <SID>StripTrailingWhitespaces()
@@ -111,4 +127,3 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 
 set exrc
-set secure
