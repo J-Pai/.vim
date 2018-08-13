@@ -1,12 +1,45 @@
+" Plugin Manager
+call plug#begin('~/.vim/plugins')
+" Add Plugins here...
+Plug 'tpope/vim-sensible'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-fugitive'
+Plug 'idanarye/vim-merginal'
+Plug 'itchyny/lightline.vim'
+
+" Color Themes
+Plug 'josuegaleas/jay'
+
+" Completion Plugins
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'zchee/deoplete-clang'
+
+" JavaScript Plugins
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" Plug 'alvan/vim-closetag'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'jparise/vim-graphql'
+
+call plug#end()
+
 scriptencoding utf-8
 set encoding=utf-8
-syntax on
+syntax enable
 set t_Co=256
 set conceallevel=0
 
 " Color Scheme
-colorscheme molokai
-hi Normal guibg=NONE ctermbg=NONE
+colorscheme jay
+" hi Normal guibg=None ctermbg=None
+set background=light
+if has('nvim')
+  set termguicolors
+endif
+let g:lightline = { 'colorscheme': 'jay' }
 
 " Basic Setup
 set showcmd
@@ -57,31 +90,6 @@ let g:python_host_prog = '/usr/bin/python'
 
 " Remove trailing whitespace on save
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
-" Plugin Manager
-call plug#begin('~/.vim/plugins')
-" Add Plugins here...
-Plug 'tpope/vim-sensible'
-Plug 'jiangmiao/auto-pairs'
-Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-fugitive'
-Plug 'idanarye/vim-merginal'
-Plug 'vim-airline/vim-airline'
-
-" Completion Plugins
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'zchee/deoplete-clang'
-
-" JavaScript Plugins
-" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-" Plug 'alvan/vim-closetag'
-" Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
-" Plug 'jparise/vim-graphql'
-
-call plug#end()
 
 if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
     let g:airline#extensions#tabline#enabled = 1
