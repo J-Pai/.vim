@@ -135,3 +135,4 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 
 set exrc
+set secure
