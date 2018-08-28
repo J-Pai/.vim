@@ -13,6 +13,7 @@ If using NeoVim, use following commands after completing setup:
 mkdir -p ~/.config/nvim/
 ln -s ~/.vim/autoload/ ~/.config/nvim/
 ln -s ~/.vim/colors ~/.config/nvim/
+ln -s ~/.vim/syntax ~/.config/nvim/
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 ```
 
