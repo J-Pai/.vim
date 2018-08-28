@@ -35,7 +35,7 @@ set conceallevel=0
 " Color Scheme
 colorscheme jay
 " hi Normal guibg=None ctermbg=None
-set background=light
+set background=dark
 if has('nvim')
   set termguicolors
 endif
@@ -61,6 +61,9 @@ set shiftwidth=2
 " Comment line above and uncomment line below to set all JS type files to
 " tabbing of 2 spaces.
 " autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
+
+" Special Syntax Highlighting
+autocmd BufNewFile,BufRead *.gstol set syntax=stol
 
 set splitbelow
 set splitright
