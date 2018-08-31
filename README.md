@@ -35,15 +35,10 @@ If you see strange characters in other terminals such as lxterminal, add the fol
 ```bash
 export VTE_VERSION="100"
 ```
-## vim-airline Notes
-vim-airline is a plugin that provides a nicer looking status line, similarily to how powerline works for standard shells. If the statusline looks weird after installation or if you do not have powerline fonts installed, simply set the variable g:airline_powerline_fonts to 0.
-
-This variable can be found (already set to 1) in the vimrc file.
-
-If you have the rights to do so, you can also install the fonts for powerline.
+## deoplete.nvim
+deoplete is an autocomplete/code suggestions plugin. To use, make sure to install NEOVIM. After that, make sure you have Python3 installed. From here, install the neovim python bindings with the following command:
 ```bash
-sudo apt-get install fonts-powerline
+pip3 install neovim
 ```
-The font that appears to have the best alignment is 12pt DejaVu Sans Mono for Powerline.
+See (https://github.com/Shougo/deoplete.nvim) for how to configure.
 
-If using Powerline for bash, make sure to copy the default configuration to ~/.config and change the shell theme to default_leftonly.
