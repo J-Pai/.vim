@@ -17,6 +17,9 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'zchee/deoplete-clang'
 
+" Python Plugins
+Plug 'zchee/deoplete-jedi'
+
 " JavaScript Plugins
 " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " Plug 'alvan/vim-closetag'
