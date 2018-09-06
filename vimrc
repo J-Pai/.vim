@@ -34,6 +34,8 @@ set encoding=utf-8
 syntax enable
 set t_Co=256
 set conceallevel=0
+" Shared System Clipboard
+set clipboard+=unnamedplus
 
 " Color Scheme
 colorscheme jay
