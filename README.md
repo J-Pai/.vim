@@ -42,3 +42,9 @@ pip3 install neovim
 ```
 See (https://github.com/Shougo/deoplete.nvim) for how to configure.
 
+## vim-livedown
+This plugin is used for live viewing of Markdown. This requires a companion installation using NPM.
+```
+npm install -g livedown
+```
+See the following link for more information: (https://github.com/shime/vim-livedown).

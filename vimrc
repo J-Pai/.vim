@@ -27,6 +27,9 @@ Plug 'zchee/deoplete-jedi'
 " Plug 'mxw/vim-jsx'
 " Plug 'jparise/vim-graphql'
 
+" Markdown Live Preview
+Plug 'shime/vim-livedown'
+
 call plug#end()
 
 scriptencoding utf-8
