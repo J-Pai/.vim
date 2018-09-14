@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugins')
 Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'idanarye/vim-merginal'
 Plug 'itchyny/lightline.vim'
 
@@ -143,6 +144,8 @@ function! <SID>StripTrailingWhitespaces()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
+
+let g:indent_guides_enable_on_vim_startup = 1
 
 set exrc
 set secure
