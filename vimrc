@@ -62,7 +62,7 @@ set expandtab
 
 " Generic tabbing.
 set tabstop=4
-set shiftwidth=
+set shiftwidth=4
 
 " File type specific tabbing
 " autocmd BufNewFile,BufRead *.jsx setlocal tabstop=2 shiftwidth=2
@@ -70,6 +70,8 @@ set shiftwidth=
 " tabbing of 2 spaces.
 " autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 
+" Special File Indenting
+autocmd FileType markdown setlocal tabstop=3 shiftwidth=3
 " Special Syntax Highlighting
 autocmd BufNewFile,BufRead *.gstol set syntax=stol
 
