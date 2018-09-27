@@ -71,7 +71,7 @@ set shiftwidth=4
 " autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 
 " Special File Indenting
-autocmd FileType markdown setlocal tabstop=3 shiftwidth=3
+autocmd FileType markdown setlocal tabstop=3 shiftwidth=3 tw=80
 " Special Syntax Highlighting
 autocmd BufNewFile,BufRead *.gstol set syntax=stol
 
