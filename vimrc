@@ -75,7 +75,7 @@ set shiftwidth=4
 " Special File Indenting
 autocmd FileType markdown setlocal tabstop=3 shiftwidth=3 tw=80
 " Special Syntax Highlighting
-autocmd BufNewFile,BufRead *.gstol set syntax=stol
+autocmd BufNewFile,BufRead *.gstol set syntax=stol noexpandtab
 
 set splitbelow
 set splitright
