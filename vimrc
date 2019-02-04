@@ -7,6 +7,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'idanarye/vim-merginal'
 Plug 'itchyny/lightline.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/nerdtree'
+Plug 'editorconfig/editorconfig-vim'
 
 " Color Themes
 Plug 'josuegaleas/jay'
@@ -33,6 +37,9 @@ Plug 'zchee/deoplete-clang'
 
 " Markdown Live Preview
 Plug 'shime/vim-livedown'
+
+"Plant UML Plugin
+Plug 'aklt/plantuml-syntax'
 
 call plug#end()
 
@@ -77,7 +84,7 @@ set shiftwidth=4
 " Special File Indenting
 autocmd FileType markdown setlocal tabstop=3 shiftwidth=3 tw=80
 " Special Syntax Highlighting
-autocmd BufNewFile,BufRead *.gstol set syntax=stol noexpandtab
+autocmd BufNewFile,BufRead *.gstol set syntax=stol "noexpandtab
 
 set splitbelow
 set splitright
@@ -142,6 +149,10 @@ if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
       endif
 
     set completeopt-=preview
+endif
+
+if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
+    map <C-o> :NERDTreeToggle<CR>
 endif
 
 function! <SID>StripTrailingWhitespaces()
