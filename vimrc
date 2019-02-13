@@ -13,7 +13,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 
 " Color Themes
-Plug 'josuegaleas/jay'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 " Completion Plugins
 if has('nvim')
@@ -42,19 +42,13 @@ call plug#end()
 scriptencoding utf-8
 set encoding=utf-8
 syntax enable
-set t_Co=256
 set conceallevel=0
 " Shared System Clipboard
 set clipboard+=unnamedplus
 
-" Color Scheme
-colorscheme jay
-" hi Normal guibg=None ctermbg=None
-set background=dark
-if has('nvim')
-  set termguicolors
-endif
-let g:lightline = { 'colorscheme': 'jay' }
+" Color Sche
+colorscheme onehalfdark
+let g:lightline = {'colorscheme': 'onehalfdark'}
 
 " Basic Setup
 set showcmd
