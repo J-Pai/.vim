@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugins')
 Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'idanarye/vim-merginal'
 Plug 'itchyny/lightline.vim'
 Plug '/usr/local/opt/fzf'
