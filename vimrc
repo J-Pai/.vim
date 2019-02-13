@@ -31,9 +31,6 @@ Plug 'zchee/deoplete-clang'
 " Plug 'mxw/vim-jsx'
 " Plug 'jparise/vim-graphql'
 
-" Markdown Live Preview
-Plug 'shime/vim-livedown'
-
 "Plant UML Plugin
 Plug 'aklt/plantuml-syntax'
 
