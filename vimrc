@@ -105,11 +105,6 @@ let g:python_host_prog = '/usr/bin/python'
 " Remove trailing whitespace on save
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-if filereadable(expand('~/.vim/plugins/vim-airline/README.md'))
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline_powerline_fonts = 1
-endif
-
 if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
     let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
     let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js'
