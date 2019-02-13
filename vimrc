@@ -11,6 +11,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'shime/vim-livedown'
 
 " Color Themes
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
