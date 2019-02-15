@@ -11,6 +11,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'shime/vim-livedown'
+Plug 'elzr/vim-json'
+Plug 'Yggdroot/indentLine'
 
 " Color Themes
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
@@ -138,14 +140,16 @@ if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
     map <C-o> :NERDTreeToggle<CR>
 endif
 
+if filereadable(expand('~/.vim/plugins/vim-json/readme.md'))
+    let g:vim_json_syntax_conceal = 0
+endif
+
 function! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-
-let g:indent_guides_enable_on_vim_startup = 1
 
 set exrc
 set secure
