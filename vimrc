@@ -47,7 +47,17 @@ set clipboard+=unnamedplus
 
 " Color Sche
 colorscheme onehalfdark
-let g:lightline = {'colorscheme': 'onehalfdark'}
+let g:lightline = {
+    \ 'colorscheme': 'onehalfdark',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head'
+    \ },
+    \ }
+
 
 " Basic Setup
 set showcmd
