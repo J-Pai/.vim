@@ -85,6 +85,7 @@ autocmd FileType markdown setlocal tabstop=3 shiftwidth=3 tw=80
 " Special Syntax Highlighting
 autocmd BufNewFile,BufRead *.gstol set syntax=stol "noexpandtab
 au BufNewFile,BufRead Jenkinsfile setf groovy
+au BufNewFile,BufReadPost *.{yaml,yml,j2} set filetype=yaml
 
 set splitbelow
 set splitright
