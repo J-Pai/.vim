@@ -15,7 +15,7 @@ Plug 'elzr/vim-json'
 Plug 'Yggdroot/indentLine'
 
 " Color Themes
-Plug 'chriskempson/base16-vim'
+Plug 'flazz/vim-colorschemes'
 
 " Completion Plugins
 if has('nvim')
@@ -45,8 +45,9 @@ set conceallevel=0
 " Shared System Clipboard
 set clipboard+=unnamedplus
 
-" Color Sche
-colorscheme base16-default-dark
+" Color Scheme
+set t_Co=256
+colorscheme molokai
 let g:lightline = {
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
@@ -56,7 +57,9 @@ let g:lightline = {
     \   'gitbranch': 'fugitive#head'
     \ },
     \ }
-set termguicolors
+if has("termguicolors")
+    set termguicolors
+endif
 
 " Basic Setup
 set showcmd
