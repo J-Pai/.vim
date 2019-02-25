@@ -48,7 +48,7 @@ set clipboard+=unnamedplus
 " Color Sche
 colorscheme base16-default-dark
 let g:lightline = {
-    \ 'colorscheme': 'base16-default-dark',
+    \ 'colorscheme': 'base16-default',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
