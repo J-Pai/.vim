@@ -15,7 +15,7 @@ Plug 'elzr/vim-json'
 Plug 'Yggdroot/indentLine'
 
 " Color Themes
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'chriskempson/base16-vim'
 
 " Completion Plugins
 if has('nvim')
@@ -46,9 +46,9 @@ set conceallevel=0
 set clipboard+=unnamedplus
 
 " Color Sche
-colorscheme onehalfdark
+colorscheme base16-default-dark
 let g:lightline = {
-    \ 'colorscheme': 'onehalfdark',
+    \ 'colorscheme': 'base16-default-dark',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -57,7 +57,7 @@ let g:lightline = {
     \   'gitbranch': 'fugitive#head'
     \ },
     \ }
-
+set termguicolors
 
 " Basic Setup
 set showcmd
