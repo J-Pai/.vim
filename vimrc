@@ -20,20 +20,27 @@ Plug 'flazz/vim-colorschemes'
 " Completion Plugins
 if has('nvim')
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-endif
+
+" JavaScript Plugins
+"  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " Python Plugins
 Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-clang'
 
+" TypeScript Plugins
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
+endif
+
 " JavaScript Plugins
-" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " Plug 'alvan/vim-closetag'
 " Plug 'pangloss/vim-javascript'
 " Plug 'mxw/vim-jsx'
 " Plug 'jparise/vim-graphql'
+Plug 'HerringtonDarkholme/yats.vim'
 
-"Plant UML Plugin
+" Plant UML Plugin
 Plug 'aklt/plantuml-syntax'
 
 call plug#end()
@@ -151,6 +158,7 @@ endif
 
 if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
     map <C-o> :NERDTreeToggle<CR>
+    let g:NERDTreeNodeDelimiter = "\u00a0"
 endif
 
 if filereadable(expand('~/.vim/plugins/vim-json/readme.md'))
