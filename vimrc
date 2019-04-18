@@ -19,23 +19,20 @@ Plug 'flazz/vim-colorschemes'
 
 " Completion Plugins
 if has('nvim')
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'autozimu/LanguageClient-neovim', {
+                \ 'branch': 'next',
+                \ 'do': 'bash install.sh',
+                \ }
 
-" JavaScript Plugins
-"  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+    " (Optional) Multi-entry selection UI.
+    Plug 'junegunn/fzf'
 
-" Python Plugins
-Plug 'zchee/deoplete-jedi'
-Plug 'zchee/deoplete-clang'
-
-" TypeScript Plugins
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
 
 " JavaScript Plugins
-" Plug 'alvan/vim-closetag'
-" Plug 'pangloss/vim-javascript'
+Plug 'alvan/vim-closetag'
+Plug 'pangloss/vim-javascript'
 " Plug 'mxw/vim-jsx'
 " Plug 'jparise/vim-graphql'
 Plug 'HerringtonDarkholme/yats.vim'
@@ -56,14 +53,14 @@ set clipboard+=unnamedplus
 set t_Co=256
 colorscheme molokai
 let g:lightline = {
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'fugitive#head'
-    \ },
-    \ }
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'fugitive#head'
+            \ },
+            \ }
 if has("termguicolors")
     set termguicolors
 endif
@@ -150,10 +147,20 @@ if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
     let g:deoplete#sources#rust#rust_source_path="/usr/src/rust/src/"
 
     if !exists('g:deoplete#omni#input_patterns')
-      let g:deoplete#omni#input_patterns = {}
-      endif
+        let g:deoplete#omni#input_patterns = {}
+    endif
 
     set completeopt-=preview
+endif
+
+if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
+    set hidden
+
+    let g:LanguageClient_serverCommands = {
+                \ 'javascript': ['~/git/javascript-typescript-langserver/lib/language-server-stdio.js'],
+                \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+                \ 'python': ['/Users/rjv396/Library/Python/3.6/bin/pyls'],
+                \ }
 endif
 
 if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
