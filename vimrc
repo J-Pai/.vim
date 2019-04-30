@@ -31,12 +31,7 @@ endif
 
 " Language Plugins
 Plug 'alvan/vim-closetag'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'aklt/plantuml-syntax'
 Plug 'sheerun/vim-polyglot'
-" Plug 'jparise/vim-graphql'
 call plug#end()
 
 scriptencoding utf-8
