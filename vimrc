@@ -127,7 +127,6 @@ if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
 
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
     inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
     let $RUST_SRC_PATH='/usr/src/rust/src'
 
     " Use deoplete.
@@ -151,7 +150,7 @@ if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
     let g:LanguageClient_serverCommands = {
                 \ 'javascript': ['~/git/javascript-typescript-langserver/lib/language-server-stdio.js'],
                 \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-                \ 'python': ['/Users/rjv396/Library/Python/3.6/bin/pyls'],
+                \ 'python': ['~/Library/Python/3.6/bin/pyls'],
                 \ }
 endif
 
