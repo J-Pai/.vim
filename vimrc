@@ -6,7 +6,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 Plug 'itchyny/lightline.vim'
-Plug '/usr/local/opt/fzf'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
@@ -30,16 +29,14 @@ if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
 
-" JavaScript Plugins
+" Language Plugins
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
-" Plug 'jparise/vim-graphql'
+Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim'
-
-" Plant UML Plugin
 Plug 'aklt/plantuml-syntax'
-
+Plug 'sheerun/vim-polyglot'
+" Plug 'jparise/vim-graphql'
 call plug#end()
 
 scriptencoding utf-8
@@ -170,6 +167,10 @@ endif
 
 if filereadable(expand('~/.vim/plugins/vim-json/readme.md'))
     let g:vim_json_syntax_conceal = 0
+endif
+
+if filereadable(expand('~/.vim/plugins/vim-jsx/README.md'))
+    let g:jsx_ext_required = 0
 endif
 
 function! <SID>StripTrailingWhitespaces()
