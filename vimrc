@@ -149,7 +149,7 @@ if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
 
     let g:LanguageClient_serverCommands = {
                 \ 'javascript': ['~/git/javascript-typescript-langserver/lib/language-server-stdio.js'],
-                \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+                \ 'javascript.jsx':  ['~/git/javascript-typescript-langserver/lib/language-server-stdio.js'],
                 \ 'python': ['~/Library/Python/3.6/bin/pyls'],
                 \ }
 endif
