@@ -159,9 +159,6 @@ if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
     let g:NERDTreeNodeDelimiter = "\u00a0"
 endif
 
-if filereadable(expand('~/.vim/plugins/vim-json/readme.md'))
-endif
-
 if filereadable(expand('~/.vim/plugins/vim-jsx/README.md'))
     let g:jsx_ext_required = 0
 endif
