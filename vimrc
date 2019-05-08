@@ -160,11 +160,14 @@ if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
 endif
 
 if filereadable(expand('~/.vim/plugins/vim-json/readme.md'))
-    let g:vim_json_syntax_conceal = 0
 endif
 
 if filereadable(expand('~/.vim/plugins/vim-jsx/README.md'))
     let g:jsx_ext_required = 0
+endif
+
+if filereadable(expand('~/.vim/plugins/indentLine/README.md'))
+    let g:indentLine_fileTypeExclude = ['json', 'markdown']
 endif
 
 function! <SID>StripTrailingWhitespaces()
