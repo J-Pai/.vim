@@ -108,7 +108,6 @@ endif
 " Show Invisibles
 set list listchars=tab:>\ ,trail:·,eol:¬
 
-set pastetoggle=<F2>
 let g:python_host_prog = '/usr/bin/python'
 
 " Remove trailing whitespace on save
@@ -152,6 +151,7 @@ if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
                 \ 'javascript.jsx':  ['~/git/javascript-typescript-langserver/lib/language-server-stdio.js'],
                 \ 'python': ['~/Library/Python/3.6/bin/pyls'],
                 \ }
+    command Def execute "call LanguageClient#textDocument_definition({'gotoCmd': 'split'})"
 endif
 
 if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
