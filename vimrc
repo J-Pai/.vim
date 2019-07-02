@@ -174,5 +174,8 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
+" Disable Yank after Paste
+vnoremap p "_dP
+
 set exrc
 set secure
