@@ -157,6 +157,7 @@ endif
 if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
     map <C-o> :NERDTreeToggle<CR>
     let g:NERDTreeNodeDelimiter = "\u00a0"
+    let NERDTreeShowHidden=1
 endif
 
 if filereadable(expand('~/.vim/plugins/vim-jsx/README.md'))
