@@ -145,12 +145,7 @@ endif
 
 if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
     set hidden
-
-    let g:LanguageClient_serverCommands = {
-                \ 'javascript': ['~/git/javascript-typescript-langserver/lib/language-server-stdio.js'],
-                \ 'javascript.jsx':  ['~/git/javascript-typescript-langserver/lib/language-server-stdio.js'],
-                \ 'python': ['~/Library/Python/3.6/bin/pyls'],
-                \ }
+    let g:LanguageClient_serverCommands = {}
     command Def execute "call LanguageClient#textDocument_definition({'gotoCmd': 'split'})"
 endif
 
