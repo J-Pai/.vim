@@ -69,8 +69,8 @@ set textwidth=0
 set expandtab
 
 " Generic tabbing.
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 " File type specific tabbing
 " autocmd BufNewFile,BufRead *.jsx setlocal tabstop=2 shiftwidth=2
