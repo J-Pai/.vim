@@ -80,12 +80,12 @@ set shiftwidth=2
 
 " Special File Indenting
 autocmd FileType markdown setlocal tabstop=3 shiftwidth=3 tw=80
+au BufNewFile,BufRead *.go setlocal noexpandtab
+au FileType vim setlocal tabstop=4 shiftwidth=4
 " Special Syntax Highlighting
 autocmd BufNewFile,BufRead *.gstol set syntax=stol "noexpandtab
 au BufNewFile,BufRead Jenkinsfile setf groovy
 au BufNewFile,BufReadPost *.{yaml,yml,j2} set filetype=yaml
-" Special Syntax Highlighting
-au BufNewFile,BufRead *.go setlocal noexpandtab
 
 set splitbelow
 set splitright
@@ -116,7 +116,7 @@ let g:python_host_prog = '/usr/bin/python'
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
-    let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
+    let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js'
     let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js'
     let g:closetag_emptyTags_caseSensitive = 1
     let g:closetag_shortcut = '>'
@@ -133,10 +133,10 @@ if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
     " Use deoplete.
     let g:deoplete#enable_at_startup = 1
 
-    let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
-    let g:deoplete#sources#clang#clang_header ="/usr/include/clang/"
-    let g:deoplete#sources#rust#racer_binary="/usr/bin/racer"
-    let g:deoplete#sources#rust#rust_source_path="/usr/src/rust/src/"
+    let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
+    let g:deoplete#sources#clang#clang_header = '/usr/include/clang/'
+    let g:deoplete#sources#rust#racer_binary = '/usr/bin/racer'
+    let g:deoplete#sources#rust#rust_source_path = '/usr/src/rust/src/'
 
     if !exists('g:deoplete#omni#input_patterns')
         let g:deoplete#omni#input_patterns = {}
@@ -146,8 +146,10 @@ if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
 endif
 
 if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
-    set hidden
-    let g:LanguageClient_serverCommands = {}
+    let g:LanguageClient_autoStart = 1
+    let g:LanguageClient_serverCommands = {
+        \ 'go': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+        \ }
     command Def execute "call LanguageClient#textDocument_definition({'gotoCmd': 'split'})"
 endif
 
@@ -166,8 +168,8 @@ if filereadable(expand('~/.vim/plugins/indentLine/README.md'))
 endif
 
 function! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
+    let l = line('.')
+    let c = col('.')
     %s/\s\+$//e
     call cursor(l, c)
 endfun
