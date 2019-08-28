@@ -149,6 +149,7 @@ if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
     let g:LanguageClient_autoStart = 1
     let g:LanguageClient_serverCommands = {
         \ 'go': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+        \ 'proto': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
         \ }
     command Def execute "call LanguageClient#textDocument_definition({'gotoCmd': 'split'})"
 endif
