@@ -23,11 +23,12 @@ if has('nvim')
                 \ 'do': 'bash install.sh',
                 \ }
 
-    " (Optional) Multi-entry selection UI.
-    Plug 'junegunn/fzf'
-
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
+
+" FZF Fuzzy Finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Language Plugins
 Plug 'alvan/vim-closetag'
