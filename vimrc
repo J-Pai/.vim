@@ -169,6 +169,10 @@ if filereadable(expand('~/.vim/plugins/indentLine/README.md'))
     let g:indentLine_fileTypeExclude = ['json', 'markdown']
 endif
 
+if filereadable(expand('~/.vim/plugins/fzf.vim/README.md'))
+    command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+endif
+
 function! <SID>StripTrailingWhitespaces()
     let l = line('.')
     let c = col('.')
