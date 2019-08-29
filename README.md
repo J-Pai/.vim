@@ -48,3 +48,11 @@ This plugin is used for live viewing of Markdown. This requires a companion inst
 npm install -g livedown
 ```
 See the following link for more information: (https://github.com/shime/vim-livedown).
+
+## Fuzzy Finding
+Configuration now contains the all important file/code fuzzy finder. To enable:
+```
+sudo apt-get install silversearcher-ag
+sudo apt-get install ripgrep
+sudo apt-get install fzf
+```
