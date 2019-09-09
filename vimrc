@@ -82,6 +82,7 @@ set shiftwidth=2
 " Special File Indenting
 autocmd FileType markdown setlocal tabstop=3 shiftwidth=3 tw=80
 au BufNewFile,BufRead *.go setlocal noexpandtab
+au BufNewFile,BufRead *.mk setlocal expandtab
 au FileType vim setlocal tabstop=4 shiftwidth=4
 " Special Syntax Highlighting
 autocmd BufNewFile,BufRead *.gstol set syntax=stol "noexpandtab
