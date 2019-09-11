@@ -48,10 +48,11 @@ colorscheme molokai
 let g:lightline = {
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+            \             [ 'ct', 'gitbranch', 'readonly', 'filename', 'modified' ] ]
             \ },
             \ 'component_function': {
-            \   'gitbranch': 'fugitive#head'
+            \   'gitbranch': 'fugitive#head',
+            \   'ct': 'CtClient'
             \ },
             \ }
 if has("termguicolors")
@@ -175,12 +176,22 @@ if filereadable(expand('~/.vim/plugins/fzf.vim/README.md'))
     command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 endif
 
+" Function for stripping whitespace
 function! <SID>StripTrailingWhitespaces()
     let l = line('.')
     let c = col('.')
     %s/\s\+$//e
     call cursor(l, c)
 endfun
+
+" Function for obtaining CITC Client
+function CtClient()
+    let client = matchstr(getcwd(), $GOOG.$USER.'/\zs.\{-}\ze/')
+    if !empty(client)
+        return client
+    endif
+    return ''
+endfunction
 
 " Disable Yank after Paste
 vnoremap p "_dP
