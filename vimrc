@@ -156,7 +156,14 @@ if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
         \ 'proto': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
         \ 'cpp': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
         \ }
+    let g:LanguageClient_diagnosticsDisplay = {
+        \   1: { 'signText': 'X' },
+        \   2: { 'signText': '!' },
+        \   3: { 'signText': 'i' },
+        \   4: { 'signText': '>' },
+        \}
     command Def execute "call LanguageClient#textDocument_definition({'gotoCmd': 'split'})"
+    set signcolumn=yes
 endif
 
 if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
