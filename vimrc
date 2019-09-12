@@ -105,6 +105,7 @@ endif
 
 if exists(':tnoremap')
     tnoremap <Esc> <C-\><C-n>
+    tnoremap <C-w> <C-\><C-n><C-w>
 endif
 
 if exists(':terminal')
