@@ -106,6 +106,7 @@ endif
 if exists(':tnoremap')
     tnoremap <Esc> <C-\><C-n>
     tnoremap <C-w> <C-\><C-n><C-w>
+    tnoremap <LeftRelease> <LeftRelease>a
 endif
 
 if exists(':terminal')
