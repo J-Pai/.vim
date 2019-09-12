@@ -108,7 +108,10 @@ if exists(':tnoremap')
 endif
 
 if exists(':terminal')
-    map <C-s> :split <bar> :set nonumber <bar> terminal <CR> <Insert>
+    map <C-s> :split <bar> :set nonumber signcolumn=no <bar> terminal <CR> <Insert>
+    map <C-S-s> :vsplit <bar> :set nonumber signcolumn=no <bar> terminal <CR> <Insert>
+    " Set terminal options
+    autocmd BufWinEnter,WinEnter term://* startinsert
 endif
 
 " Show Invisibles
