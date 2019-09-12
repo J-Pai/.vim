@@ -89,6 +89,7 @@ au FileType vim setlocal tabstop=4 shiftwidth=4
 autocmd BufNewFile,BufRead *.gstol set syntax=stol "noexpandtab
 au BufNewFile,BufRead Jenkinsfile setf groovy
 au BufNewFile,BufReadPost *.{yaml,yml,j2} set filetype=yaml
+au BufNewFile,BufRead BUILD setlocal tabstop=4 shiftwidth=4
 
 set splitbelow
 set splitright
@@ -153,6 +154,7 @@ if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
     let g:LanguageClient_serverCommands = {
         \ 'go': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
         \ 'proto': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+        \ 'cpp': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
         \ }
     command Def execute "call LanguageClient#textDocument_definition({'gotoCmd': 'split'})"
 endif
