@@ -59,6 +59,9 @@ if has("termguicolors")
     set termguicolors
 endif
 
+" Sessions
+set sessionoptions=buffers
+
 " Basic Setup
 set showcmd
 set showmatch
