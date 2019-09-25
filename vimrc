@@ -158,11 +158,16 @@ endif
 
 if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
     let g:LanguageClient_autoStart = 1
-    let g:LanguageClient_serverCommands = {
-        \ 'go': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
-        \ 'proto': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
-        \ 'cpp': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
-        \ }
+
+    if getcwd() =~ "^/google"
+        let g:LanguageClient_serverCommands = {
+            \ 'go': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+            \ 'proto': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+            \ 'cpp': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+            \ }
+    else
+        let g:LanguageClient_serverCommands = {}
+    endif
     let g:LanguageClient_diagnosticsDisplay = {
         \   1: { 'signText': 'X' },
         \   2: { 'signText': '!' },
