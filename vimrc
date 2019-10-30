@@ -84,15 +84,16 @@ set shiftwidth=2
 " autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 
 " Special File Indenting
-autocmd FileType markdown setlocal tabstop=3 shiftwidth=3 tw=80
+au FileType markdown setlocal tabstop=3 shiftwidth=3 tw=80
 au BufNewFile,BufRead *.go setlocal noexpandtab
 au BufNewFile,BufRead *.mk setlocal expandtab
 au FileType vim setlocal tabstop=4 shiftwidth=4
 " Special Syntax Highlighting
-autocmd BufNewFile,BufRead *.gstol set syntax=stol "noexpandtab
+au BufNewFile,BufRead *.gstol set syntax=stol "noexpandtab
 au BufNewFile,BufRead Jenkinsfile setf groovy
 au BufNewFile,BufReadPost *.{yaml,yml,j2} set filetype=yaml
 au BufNewFile,BufRead BUILD setlocal tabstop=4 shiftwidth=4
+au BufNewFile,BufRead *Makefile* set syntax=make "noexpandtab
 
 set splitbelow
 set splitright
