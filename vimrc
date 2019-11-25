@@ -58,6 +58,7 @@ let g:lightline = {
 if has("termguicolors")
     set termguicolors
 endif
+let &t_ut=''
 
 " Sessions
 set sessionoptions=buffers
