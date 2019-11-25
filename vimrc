@@ -40,7 +40,7 @@ set encoding=utf-8
 syntax enable
 set conceallevel=0
 " Shared System Clipboard
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 " Color Scheme
 set t_Co=256
