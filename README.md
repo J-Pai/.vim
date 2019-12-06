@@ -52,7 +52,7 @@ See the following link for more information: (https://github.com/shime/vim-lived
 ## Fuzzy Finding
 Configuration now contains the all important file/code fuzzy finder. To enable:
 ```
-sudo apt-get install silversearcher-ag
-sudo apt-get install ripgrep
-sudo apt-get install fzf
+sudo apt install silversearcher-ag
+sudo apt install ripgrep
+sudo apt install fzf
 ```
