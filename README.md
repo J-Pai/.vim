@@ -38,7 +38,7 @@ export VTE_VERSION="100"
 ## deoplete.nvim
 deoplete is an autocomplete/code suggestions plugin. To use, make sure to install NEOVIM. After that, make sure you have Python3 installed. From here, install the neovim python bindings with the following command:
 ```bash
-pip3 install neovim
+pip3 install --user pynvim
 ```
 See (https://github.com/Shougo/deoplete.nvim) for how to configure.
 
