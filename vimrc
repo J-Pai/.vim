@@ -33,6 +33,7 @@ Plug 'junegunn/fzf.vim'
 " Language Plugins
 Plug 'alvan/vim-closetag'
 Plug 'sheerun/vim-polyglot'
+Plug 'duganchen/vim-soy'
 call plug#end()
 
 scriptencoding utf-8
