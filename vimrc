@@ -131,8 +131,8 @@ let g:python_host_prog = '/usr/bin/python'
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
-    let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js'
-    let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js'
+    let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js,*.soy'
+    let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js,.*.soy'
     let g:closetag_emptyTags_caseSensitive = 1
     let g:closetag_shortcut = '>'
     let g:closetag_close_shortcut = '<leader>>'
