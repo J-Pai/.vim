@@ -168,6 +168,7 @@ if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
             \ 'go': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
             \ 'proto': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
             \ 'cpp': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+            \ 'java': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
             \ }
     else
         let g:LanguageClient_serverCommands = {}
