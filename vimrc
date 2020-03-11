@@ -61,7 +61,9 @@ if has("termguicolors")
 endif
 let &t_ut=''
 set hlsearch
-set inccommand=nosplit
+if has('nvim')
+    set inccommand=nosplit
+endif
 
 " Sessions
 set sessionoptions=buffers
