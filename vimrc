@@ -34,6 +34,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'alvan/vim-closetag'
 Plug 'sheerun/vim-polyglot'
 Plug 'duganchen/vim-soy'
+
+" Terminal Plugin
+Plug 'kassio/neoterm'
 call plug#end()
 
 scriptencoding utf-8
@@ -120,7 +123,7 @@ if exists(':tnoremap')
 endif
 
 if exists(':terminal')
-    map <C-s> :split <bar> :set nonumber signcolumn=no <bar> terminal <CR> <Insert>
+    map <C-s> :tabnew <bar> :set nonumber signcolumn=no <bar> :Tnew <CR> <Insert>
     " Set terminal options
     autocmd BufWinEnter,WinEnter term://* startinsert
 endif
