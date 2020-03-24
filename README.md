@@ -25,10 +25,27 @@ If using NEOVIM, create a `.nvimrc` file in the root directory of the project wi
 https://hea-www.harvard.edu/~fine/Tech/vi.html
 
 ## Modifications and Useful Commands
-* Ctrl + s (NeoVim Only): Open Terminal
+* Ctrl + s (NeoVim Only): Open Terminal (uses neoterm)
 * F2: toggle paste on/off
 * \ + j (Only if YouCompleteMe is installed): YcmCompleter GoTo keyboard shortcut
 * Key command for reindenting file: `gg=G`
+
+### Opening Files in Terminal
+Use [neovim-remote](https://github.com/mhinz/neovim-remote).
+
+```bash
+pip3 install neovim-remote
+```
+
+Add the following to `~/.bashrc`:
+
+```bash
+if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
+  alias h='nvr -o' # Open file in horizontal split
+  alias v='nvr -O' # Open file in vertical split
+  alias t='nvr --remote-tab' # Open file in new split
+fi
+```
 
 ## Notes on Unexpected Characters in NVIM
 If you see strange characters in other terminals such as lxterminal, add the following line to ~/.bashrc.
