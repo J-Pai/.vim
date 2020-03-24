@@ -123,7 +123,9 @@ if exists(':tnoremap')
 endif
 
 if exists(':terminal')
-    map <C-s> :tabnew <bar> :set nonumber signcolumn=no <bar> :Tnew <CR> <Insert>
+    let g:neoterm_autoinsert = 1
+    let g:neoterm_default_mod = "rightbelow"
+    map <C-s> :set nonumber signcolumn=no <bar> :Tnew <CR>
     " Set terminal options
     autocmd BufWinEnter,WinEnter term://* startinsert
 endif
