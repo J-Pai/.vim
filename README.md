@@ -37,7 +37,7 @@ Use [neovim-remote](https://github.com/mhinz/neovim-remote).
 pip3 install neovim-remote
 ```
 
-Add the following to `~/.bashrc`:
+Add the following to `~/.bash_aliases`:
 
 ```bash
 if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
