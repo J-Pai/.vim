@@ -148,8 +148,6 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
 endif
 
 if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
-    inoremap <expr> <Left> pumvisible() ? "\<c-y>\<Left>" : "\<Left>"
-    inoremap <expr> <Right> pumvisible() ? "\<c-y>\<Right>" : "\<Right>"
     inoremap <expr> <CR> pumvisible() ? "\<c-y>\<cr>" : "\<CR>"
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
     inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -168,6 +166,7 @@ if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
 
     set completeopt-=preview
     set completeopt+=noinsert
+    set completeopt+=noselect
 endif
 
 if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
@@ -175,10 +174,10 @@ if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
 
     if getcwd() =~ "^/google"
         let g:LanguageClient_serverCommands = {
-            \ 'go': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
-            \ 'proto': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
-            \ 'cpp': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
-            \ 'java': [$LSP, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+            \ 'go': [$LSP_VIM, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+            \ 'proto': [$LSP_VIM, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+            \ 'cpp': [$LSP_VIM, '--tooltag=vim-lsc', '--noforward_sync_responses'],
+            \ 'java': [$LSP_VIM, '--tooltag=vim-lsc', '--noforward_sync_responses'],
             \ }
     else
         let g:LanguageClient_serverCommands = {}
