@@ -148,10 +148,12 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
 endif
 
 if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
-    inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-
+    inoremap <expr> <Left> pumvisible() ? "\<c-y>\<Left>" : "\<Left>"
+    inoremap <expr> <Right> pumvisible() ? "\<c-y>\<Right>" : "\<Right>"
+    inoremap <expr> <CR> pumvisible() ? "\<c-y>\<cr>" : "\<CR>"
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
     inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
     let $RUST_SRC_PATH='/usr/src/rust/src'
 
     " Use deoplete.
