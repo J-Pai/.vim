@@ -165,6 +165,7 @@ if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
     call deoplete#custom#var('omni', 'input_patterns', {})
 
     set completeopt-=preview
+    set completeopt+=noinsert
 endif
 
 if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
