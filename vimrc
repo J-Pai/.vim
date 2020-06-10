@@ -101,7 +101,7 @@ au FileType vim setlocal tabstop=4 shiftwidth=4
 au BufNewFile,BufRead *.gstol set syntax=stol "noexpandtab
 au BufNewFile,BufRead Jenkinsfile setf groovy
 au BufNewFile,BufReadPost *.{yaml,yml,j2} set filetype=yaml
-au BufNewFile,BufRead BUILD setlocal tabstop=4 shiftwidth=4
+au BufNewFile,BufRead *.{BUILD,bzl} setlocal tabstop=4 shiftwidth=4
 au BufNewFile,BufRead *Makefile* set syntax=make noexpandtab
 
 set splitbelow
