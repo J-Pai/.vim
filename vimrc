@@ -162,7 +162,9 @@ if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
     let g:deoplete#sources#rust#racer_binary = '/usr/bin/racer'
     let g:deoplete#sources#rust#rust_source_path = '/usr/src/rust/src/'
 
-    call deoplete#custom#var('omni', 'input_patterns', {})
+    if has('nvim')
+        call deoplete#custom#var('omni', 'input_patterns', {})
+    endif
 
     set completeopt-=preview
     set completeopt+=noinsert
