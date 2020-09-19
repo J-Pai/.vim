@@ -145,6 +145,11 @@ endif
 if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
     " coc-settings.json
     if getcwd() =~ "^/google"
+        let g:coc_global_extensions = [
+            \   "coc-json",
+            \   "coc-vimlsp"
+            \ ]
+
         let g:coc_user_config = {
         \   "languageserver": {
         \     "google": {
@@ -168,14 +173,11 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
         \   }
         \ }
     else
-        let g:coc_user_config = {
-        \   "languageserver": {
-        \     "python": {
-        \        "command": "~/.local/bin/pyls",
-        \        "filetypes": ["python"]
-        \     }
-        \   }
-        \ }
+        let g:coc_global_extensions = [
+            \   "coc-json",
+            \   "coc-vimlsp",
+            \   "coc-python"
+            \ ]
     endif
 
     set signcolumn=number
