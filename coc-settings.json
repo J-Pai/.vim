@@ -1,0 +1,12 @@
+{
+  "languageserver": {
+    "python": {
+      "command": "~/.local/bin/pyls",
+      "filetypes": ["python"]
+    },
+    "google_go": {
+      "command": "",
+      "filetypes": ["go"]
+    }
+  }
+}
