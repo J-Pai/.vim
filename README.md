@@ -67,10 +67,9 @@ See (https://github.com/Shougo/deoplete.nvim) for how to configure.
 
 ## Language Completion Setups
 ### Python
-Jedi Language Server
 
 ```bash
-python3 -m pip install jedi-language-server
+python3 -m pip install python-language-server
 ```
 
 ## vim-livedown
