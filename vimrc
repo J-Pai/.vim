@@ -182,7 +182,9 @@ if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
             \ 'java': [$LSP_VIM, '--tooltag=vim-lsc', '--noforward_sync_responses'],
             \ }
     else
-        let g:LanguageClient_serverCommands = {}
+        let g:LanguageClient_serverCommands = {
+            \ 'python': ['~/.local/bin/pyls'],
+            \ }
     endif
     let g:LanguageClient_diagnosticsDisplay = {
         \   1: { 'signText': 'X' },
