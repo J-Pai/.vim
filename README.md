@@ -72,6 +72,25 @@ See (https://github.com/Shougo/deoplete.nvim) for how to configure.
 python3 -m pip install python-language-server
 ```
 
+### C/C++
+
+```
+sudo apt install clangd
+```
+
+#### CMake Projects
+During initial cmake generation include the following flag:
+
+```
+-DCMAKE_EXPORT_COMPILE_COMMANDS=1
+```
+
+Link the `compile_commands.json` file to the root of the project.
+
+```
+ln -s ~/myproject/cmake/build/compile_commands.json ~/myproject/
+```
+
 ## vim-livedown
 This plugin is used for live viewing of Markdown. This requires a companion installation using NPM.
 
