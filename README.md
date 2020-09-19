@@ -65,12 +65,12 @@ pip3 install --user pynvim
 
 See (https://github.com/Shougo/deoplete.nvim) for how to configure.
 
-## Language Server Installations
+## Language Completion Setups
 ### Python
-Palantir Technologies - python-language-server
+Jedi Language Server
 
 ```bash
-python3 -m pip install python-language-server
+python3 -m pip install jedi-language-server
 ```
 
 ## vim-livedown
