@@ -17,14 +17,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'flazz/vim-colorschemes'
 
 " Completion Plugins
-if has('nvim')
-    Plug 'autozimu/LanguageClient-neovim', {
-                \ 'branch': 'next',
-                \ 'do': 'bash install.sh',
-                \ }
-
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-endif
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " FZF Fuzzy Finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -106,6 +100,7 @@ au BufNewFile,BufRead *Makefile* set syntax=make noexpandtab
 
 set splitbelow
 set splitright
+set updatetime=300
 
 set colorcolumn=80
 
@@ -147,54 +142,43 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
     let g:closetag_close_shortcut = '<leader>>'
 endif
 
-if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
-    inoremap <expr> <CR> pumvisible() ? "\<c-y>\<cr>" : "\<CR>"
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
+    set signcolumn=number
+    inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-    let $RUST_SRC_PATH='/usr/src/rust/src'
-
-    " Use deoplete.
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#max_abbr_width = 0
-    let g:deoplete#max_menu_width = 0
-
-
-    let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-    let g:deoplete#sources#clang#clang_header = '/usr/include/clang/'
-    let g:deoplete#sources#rust#racer_binary = '/usr/bin/racer'
-    let g:deoplete#sources#rust#rust_source_path = '/usr/src/rust/src/'
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
 
     if has('nvim')
-        call deoplete#custom#var('omni', 'input_patterns', {})
-    endif
-
-    set completeopt=menuone,preview,noinsert,noselect
-endif
-
-if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
-    let g:LanguageClient_autoStart = 1
-
-    if getcwd() =~ "^/google"
-        let g:LanguageClient_serverCommands = {
-            \ 'go': [$LSP_VIM, '--tooltag=vim-lsc', '--noforward_sync_responses'],
-            \ 'proto': [$LSP_VIM, '--tooltag=vim-lsc', '--noforward_sync_responses'],
-            \ 'cpp': [$LSP_VIM, '--tooltag=vim-lsc', '--noforward_sync_responses'],
-            \ 'java': [$LSP_VIM, '--tooltag=vim-lsc', '--noforward_sync_responses'],
-            \ }
+        inoremap <silent><expr> <c-space> coc#refresh()
     else
-        let g:LanguageClient_serverCommands = {
-            \ 'python': ['~/.local/bin/pyls'],
-            \ }
+        inoremap <silent><expr> <c-@> coc#refresh()
     endif
-    let g:LanguageClient_diagnosticsDisplay = {
-        \   1: { 'signText': 'X' },
-        \   2: { 'signText': '!' },
-        \   3: { 'signText': 'i' },
-        \   4: { 'signText': '>' },
-        \}
-    command Def execute "call LanguageClient#textDocument_definition({'gotoCmd': 'split'})"
-    set signcolumn=yes
+
+    if exists('*complete_info')
+        inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+    else
+        inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    endif
+
+    nmap <silent> gd :split<CR><Plug>(coc-definition)
+    command! Def :call CocActionAsync('jumpDefinition', 'split')
+    command! Ref :call CocActionAsync('jumpReferences')
+
+    command! Doc :call <SID>ShowDocumentation()
+    function! s:ShowDocumentation()
+        if (index(['vim','help'], &filetype) >= 0)
+            execute 'h '.expand('<cword>')
+        else
+            call CocActionAsync('doHover')
+        endif
+    endfunction
 endif
 
 if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
@@ -217,7 +201,7 @@ if filereadable(expand('~/.vim/plugins/fzf.vim/README.md'))
 endif
 
 " Function for stripping whitespace
-function! <SID>StripTrailingWhitespaces()
+function! s:StripTrailingWhitespaces()
     let l = line('.')
     let c = col('.')
     %s/\s\+$//e
@@ -225,7 +209,7 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 
 " Function for obtaining CITC Client
-function CtClient()
+function! CtClient()
     let client = matchstr(getcwd(), $GOOG.$USER.'/\zs.\{-}\ze/')
     if !empty(client)
         return client
