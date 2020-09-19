@@ -156,6 +156,9 @@ if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
 
     " Use deoplete.
     let g:deoplete#enable_at_startup = 1
+    let g:deoplete#max_abbr_width = 0
+    let g:deoplete#max_menu_width = 0
+
 
     let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
     let g:deoplete#sources#clang#clang_header = '/usr/include/clang/'
@@ -166,9 +169,7 @@ if filereadable(expand('~/.vim/plugins/deoplete.nvim/README.md'))
         call deoplete#custom#var('omni', 'input_patterns', {})
     endif
 
-    set completeopt-=preview
-    set completeopt+=noinsert
-    set completeopt+=noselect
+    set completeopt=menuone,preview,noinsert,noselect
 endif
 
 if filereadable(expand('~/.vim/plugins/LanguageClient-neovim/README.md'))
