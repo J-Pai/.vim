@@ -146,6 +146,7 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
     let g:coc_global_extensions = [
         \   "coc-json",
         \   "coc-vimlsp",
+        \   "coc-cmake"
         \ ]
 
     " coc-settings.json
