@@ -143,6 +143,41 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
 endif
 
 if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
+    " coc-settings.json
+    if getcwd() =~ "^/google"
+        let g:coc_user_config = {
+        \   "languageserver": {
+        \     "google": {
+        \       "command": "/google/bin/releases/editor-devtools/ciderlsp",
+        \       "args": [
+        \         "--tooltag=coc-nvim",
+        \         "--noforward_sync_responses"
+        \       ],
+        \       "filetypes": [
+        \         "borg",
+        \         "c",
+        \         "cpp",
+        \         "go",
+        \         "java",
+        \         "proto",
+        \         "python",
+        \         "textproto",
+        \         "bzl"
+        \       ]
+        \     }
+        \   }
+        \ }
+    else
+        let g:coc_user_config = {
+        \   "languageserver": {
+        \     "python": {
+        \        "command": "~/.local/bin/pyls",
+        \        "filetypes": ["python"]
+        \     }
+        \   }
+        \ }
+    endif
+
     set signcolumn=number
     inoremap <silent><expr> <TAB>
         \ pumvisible() ? "\<C-n>" :

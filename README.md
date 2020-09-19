@@ -17,7 +17,6 @@ ln -s ~/.vim/autoload/ ~/.config/nvim/
 ln -s ~/.vim/colors ~/.config/nvim/
 ln -s ~/.vim/syntax ~/.config/nvim/
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
-ln -s ~/.vim/coc-settings.json ~/.config/nvim/
 ```
 
 ## Project Specific NeoVim/Vim Configuration
