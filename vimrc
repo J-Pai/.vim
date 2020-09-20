@@ -100,7 +100,13 @@ au BufNewFile,BufRead *Makefile* set syntax=make noexpandtab
 
 set splitbelow
 set splitright
+
 set updatetime=300
+set hidden
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+set shortmess+=c
 
 set colorcolumn=80
 
