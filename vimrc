@@ -107,6 +107,7 @@ set hidden
 set nobackup
 set nowritebackup
 set shortmess+=c
+set pumwidth=200
 
 set colorcolumn=80
 
