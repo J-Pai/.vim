@@ -108,7 +108,14 @@ set hidden
 set nobackup
 set nowritebackup
 set shortmess+=c
-set pumwidth=30
+
+if exists('&pumwidth')
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+  set pumwidth=30
+else
+  set signcolumn=yes
+endif
 
 set colorcolumn=80
 
@@ -198,7 +205,6 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
         \ }
     endif
 
-    set signcolumn=number
     inoremap <silent><expr> <TAB>
         \ pumvisible() ? "\<C-n>" :
         \ <SID>check_back_space() ? "\<TAB>" :
