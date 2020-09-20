@@ -88,7 +88,7 @@ During initial cmake generation include the following flag:
 Link the `compile_commands.json` file to the root of the project.
 
 ```
-ln -s ~/myproject/cmake/build/compile_commands.json ~/myproject/
+ln -sfn ~/myproject/cmake/build/compile_commands.json ~/myproject/
 ```
 
 ## vim-livedown

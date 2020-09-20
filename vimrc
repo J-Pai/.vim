@@ -179,6 +179,11 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
         \     "python": {
         \       "command": "~/.local/bin/pyls",
         \       "filetypes": ["python"]
+        \     },
+        \     "clangd": {
+        \       "command": "clangd",
+        \       "rootPatterns" : ["compile_commands.json"],
+        \       "filetypes": ["c", "cc", "c++", "cpp"]
         \     }
         \   }
         \ }
