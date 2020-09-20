@@ -53,7 +53,7 @@ let g:lightline = {
             \   'ct': 'CtClient'
             \ },
             \ }
-if has("termguicolors")
+if has('termguicolors')
     set termguicolors
 endif
 let &t_ut=''
@@ -92,22 +92,23 @@ au BufNewFile,BufRead *.go setlocal noexpandtab
 au BufNewFile,BufRead *.mk setlocal expandtab
 au FileType vim setlocal tabstop=4 shiftwidth=4
 " Special Syntax Highlighting
-au BufNewFile,BufRead *.gstol set syntax=stol "noexpandtab
+au BufNewFile,BufRead *.gstol setlocal syntax=stol "noexpandtab
 au BufNewFile,BufRead Jenkinsfile setf groovy
-au BufNewFile,BufReadPost *.{yaml,yml,j2} set filetype=yaml
+au BufNewFile,BufReadPost *.{yaml,yml,j2} setf yaml
 au BufNewFile,BufRead *.{BUILD,bzl} setlocal tabstop=4 shiftwidth=4
-au BufNewFile,BufRead *Makefile* set syntax=make noexpandtab
+au BufNewFile,BufRead *Makefile* setlocal syntax=make noexpandtab
 
 set splitbelow
 set splitright
 
+set cmdheight=2
 set updatetime=300
 set hidden
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
 set shortmess+=c
-set pumwidth=200
+set pumwidth=30
 
 set colorcolumn=80
 
@@ -126,7 +127,7 @@ endif
 
 if exists(':terminal')
     let g:neoterm_autoinsert = 1
-    let g:neoterm_default_mod = "rightbelow"
+    let g:neoterm_default_mod = 'rightbelow'
     let g:neoterm_autoscroll = 1
     map <C-s> :Tnew <CR>
     " Set terminal options
@@ -151,47 +152,47 @@ endif
 
 if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
     let g:coc_global_extensions = [
-        \   "coc-json",
-        \   "coc-vimlsp",
-        \   "coc-cmake",
-        \   "coc-sh"
+        \   'coc-json',
+        \   'coc-vimlsp',
+        \   'coc-cmake',
+        \   'coc-sh'
         \ ]
 
     " coc-settings.json
-    if getcwd() =~ "^/google"
+    if getcwd() =~ '^/google'
         let g:coc_user_config = {
-        \   "languageserver": {
-        \     "google": {
-        \       "command": "/google/bin/releases/editor-devtools/ciderlsp",
-        \       "args": [
-        \         "--tooltag=coc-nvim",
-        \         "--noforward_sync_responses"
+        \   'languageserver': {
+        \     'google': {
+        \       'command': '/google/bin/releases/editor-devtools/ciderlsp',
+        \       'args': [
+        \         '--tooltag=coc-nvim',
+        \         '--noforward_sync_responses'
         \       ],
-        \       "filetypes": [
-        \         "borg",
-        \         "c",
-        \         "cpp",
-        \         "go",
-        \         "java",
-        \         "proto",
-        \         "python",
-        \         "textproto",
-        \         "bzl"
+        \       'filetypes': [
+        \         'borg',
+        \         'c',
+        \         'cpp',
+        \         'go',
+        \         'java',
+        \         'proto',
+        \         'python',
+        \         'textproto',
+        \         'bzl'
         \       ]
         \     }
         \   }
         \ }
     else
         let g:coc_user_config = {
-        \   "languageserver": {
-        \     "python": {
-        \       "command": "~/.local/bin/pyls",
-        \       "filetypes": ["python"]
+        \   'languageserver': {
+        \     'python': {
+        \       'command': '~/.local/bin/pyls',
+        \       'filetypes': ['python']
         \     },
-        \     "clangd": {
-        \       "command": "clangd",
-        \       "rootPatterns" : ["compile_commands.json"],
-        \       "filetypes": ["c", "cc", "c++", "cpp"]
+        \     'clangd': {
+        \       'command': 'clangd',
+        \       'rootPatterns' : ['compile_commands.json'],
+        \       'filetypes': ['c', 'cc', 'c++', 'cpp']
         \     }
         \   }
         \ }
@@ -216,7 +217,7 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
     endif
 
     if exists('*complete_info')
-        inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+        inoremap <expr> <cr> complete_info()['selected'] != '-1' ? "\<C-y>" : "\<C-g>u\<CR>"
     else
         inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
     endif
@@ -251,7 +252,7 @@ endif
 
 if filereadable(expand('~/.vim/plugins/fzf.vim/README.md'))
     command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
-    command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+    command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 endif
 
 " Function for stripping whitespace
