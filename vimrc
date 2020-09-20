@@ -139,7 +139,7 @@ set list listchars=tab:>\ ,trail:·,eol:¬
 let g:python_host_prog = '/usr/bin/python'
 
 " Remove trailing whitespace on save
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre * call <SID>StripTrailingWhitespaces()
 
 if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
     let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js,*.soy'
@@ -153,7 +153,8 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
     let g:coc_global_extensions = [
         \   "coc-json",
         \   "coc-vimlsp",
-        \   "coc-cmake"
+        \   "coc-cmake",
+        \   "coc-sh"
         \ ]
 
     " coc-settings.json
@@ -221,10 +222,10 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
     endif
 
     nmap <silent> gd :split<CR><Plug>(coc-definition)
-    command! Def :call CocActionAsync('jumpDefinition', 'split')
-    command! Ref :call CocActionAsync('jumpReferences')
+    command! Def call CocActionAsync('jumpDefinition', 'split')
+    command! Ref call CocActionAsync('jumpReferences')
 
-    command! Doc :call <SID>ShowDocumentation()
+    command! Doc call <SID>ShowDocumentation()
     function! s:ShowDocumentation()
         if (index(['vim','help'], &filetype) >= 0)
             execute 'h '.expand('<cword>')
