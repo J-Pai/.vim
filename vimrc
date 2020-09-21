@@ -162,7 +162,6 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
         \   'coc-json',
         \   'coc-vimlsp',
         \   'coc-cmake',
-        \   'coc-sh'
         \ ]
 
     " coc-settings.json
@@ -176,7 +175,6 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
         \         '--noforward_sync_responses'
         \       ],
         \       'filetypes': [
-        \         'borg',
         \         'c',
         \         'cpp',
         \         'go',
