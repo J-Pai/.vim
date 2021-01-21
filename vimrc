@@ -58,9 +58,7 @@ if has('termguicolors')
 endif
 let &t_ut=''
 set hlsearch
-if has('nvim')
-    set inccommand=nosplit
-endif
+set nois
 
 " Sessions
 set sessionoptions=buffers
@@ -176,6 +174,7 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
         \       ],
         \       'filetypes': [
         \         'c',
+        \         'cc',
         \         'cpp',
         \         'go',
         \         'java',
