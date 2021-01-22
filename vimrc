@@ -58,7 +58,7 @@ if has('termguicolors')
 endif
 let &t_ut=''
 set hlsearch
-set nois
+set noincsearch
 
 " Sessions
 set sessionoptions=buffers
