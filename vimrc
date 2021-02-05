@@ -37,6 +37,7 @@ scriptencoding utf-8
 set encoding=utf-8
 syntax enable
 set conceallevel=0
+set lazyredraw
 " Shared System Clipboard
 set clipboard=unnamedplus
 
@@ -243,6 +244,7 @@ if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
     map <C-p> :NERDTreeToggle<CR>
     let g:NERDTreeNodeDelimiter = "\u00a0"
     let NERDTreeShowHidden=1
+    let NERDTreeHighlightCursorline = 0
 endif
 
 if filereadable(expand('~/.vim/plugins/vim-jsx/README.md'))
