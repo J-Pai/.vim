@@ -37,7 +37,6 @@ scriptencoding utf-8
 set encoding=utf-8
 syntax enable
 set conceallevel=0
-set lazyredraw
 " Shared System Clipboard
 set clipboard=unnamedplus
 
@@ -108,14 +107,8 @@ set nobackup
 set nowritebackup
 set shortmess+=c
 
-if exists('&pumwidth')
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-  set pumwidth=30
-else
-  set signcolumn=yes
-endif
-
+" Combine sign and number column
+set signcolumn=number
 set colorcolumn=80
 
 if !&scrolloff
