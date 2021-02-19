@@ -133,7 +133,7 @@ if exists(':terminal')
     map <C-s> :Tnew <CR>
     " Set terminal options
     autocmd BufWinEnter,WinEnter term://* startinsert
-    autocmd TermOpen * setlocal nonumber norelativenumber
+    autocmd TermEnter * setlocal nonumber norelativenumber
 endif
 
 " Show Invisibles
