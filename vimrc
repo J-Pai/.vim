@@ -7,7 +7,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'shime/vim-livedown'
 Plug 'elzr/vim-json'
@@ -231,13 +230,6 @@ if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
             call CocActionAsync('doHover')
         endif
     endfunction
-endif
-
-if filereadable(expand('~/.vim/plugins/nerdtree/README.markdown'))
-    map <C-p> :NERDTreeToggle<CR>
-    let g:NERDTreeNodeDelimiter = "\u00a0"
-    let NERDTreeShowHidden=1
-    let NERDTreeHighlightCursorline = 0
 endif
 
 if filereadable(expand('~/.vim/plugins/vim-jsx/README.md'))
