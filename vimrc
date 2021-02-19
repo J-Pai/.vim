@@ -10,7 +10,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'shime/vim-livedown'
 Plug 'elzr/vim-json'
-Plug 'Yggdroot/indentLine'
 
 " Color Themes
 Plug 'flazz/vim-colorschemes'
@@ -30,6 +29,10 @@ Plug 'duganchen/vim-soy'
 
 " Terminal Plugin
 Plug 'kassio/neoterm'
+
+" Explorer
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 call plug#end()
 
 scriptencoding utf-8
@@ -130,6 +133,7 @@ if exists(':terminal')
     map <C-s> :Tnew <CR>
     " Set terminal options
     autocmd BufWinEnter,WinEnter term://* startinsert
+    autocmd TermOpen * setlocal nonumber norelativenumber
 endif
 
 " Show Invisibles
@@ -139,6 +143,10 @@ let g:python_host_prog = '/usr/bin/python'
 
 " Remove trailing whitespace on save
 autocmd BufWritePre * call <SID>StripTrailingWhitespaces()
+
+if filereadable(expand('~/.vim/plugins/ranger.vim/README.md'))
+    let g:ranger_replace_netrw = 1
+endif
 
 if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
     let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js,*.soy'
@@ -234,10 +242,6 @@ endif
 
 if filereadable(expand('~/.vim/plugins/vim-jsx/README.md'))
     let g:jsx_ext_required = 0
-endif
-
-if filereadable(expand('~/.vim/plugins/indentLine/README.md'))
-    let g:indentLine_fileTypeExclude = ['json', 'markdown']
 endif
 
 if filereadable(expand('~/.vim/plugins/fzf.vim/README.md'))
