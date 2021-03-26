@@ -108,3 +108,9 @@ sudo apt install silversearcher-ag
 sudo apt install ripgrep
 sudo apt install fzf
 ```
+
+## Ranger Filesystem to replace netrw
+
+```bash
+sudo apt install ranger
+```
