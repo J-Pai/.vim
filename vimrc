@@ -110,9 +110,7 @@ set nowritebackup
 set shortmess+=c
 
 " Combine sign and number column
-if exists('signcolumn')
-    set signcolumn=number
-endif
+set signcolumn=number
 set colorcolumn=80
 
 if !&scrolloff
@@ -135,9 +133,7 @@ if exists(':terminal')
     map <C-s> :Tnew <CR>
     " Set terminal options
     autocmd BufWinEnter,WinEnter term://* startinsert
-    if exists('TermEnter')
-        autocmd TermEnter * setlocal nonumber norelativenumber
-    endif
+    autocmd TermEnter * setlocal nonumber norelativenumber
 endif
 
 " Show Invisibles
