@@ -133,7 +133,9 @@ if exists(':terminal')
     map <C-s> :Tnew <CR>
     " Set terminal options
     autocmd BufWinEnter,WinEnter term://* startinsert
-    autocmd TermEnter * setlocal nonumber norelativenumber
+    if has('nvim')
+        autocmd TermEnter * setlocal nonumber norelativenumber
+    endif
 endif
 
 " Show Invisibles
@@ -144,7 +146,7 @@ let g:python_host_prog = '/usr/bin/python'
 " Remove trailing whitespace on save
 autocmd BufWritePre * call <SID>StripTrailingWhitespaces()
 
-if filereadable(expand('~/.vim/plugins/ranger.vim/README.md'))
+if filereadable(expand('~/.vim/plugins/ranger.vim/README.md')) && has('nvim')
     let g:ranger_replace_netrw = 1
 endif
 
