@@ -157,6 +157,7 @@ if filereadable(expand('~/.vim/plugins/vim-closetag/README.md'))
 endif
 
 if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
+    let g:coc_disable_startup_warning = 1
     let g:coc_global_extensions = [
         \   'coc-json',
         \   'coc-vimlsp',
