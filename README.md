@@ -91,15 +91,6 @@ Link the `compile_commands.json` file to the root of the project.
 ln -sfn ~/myproject/cmake/build/compile_commands.json ~/myproject/
 ```
 
-## vim-livedown
-This plugin is used for live viewing of Markdown. This requires a companion installation using NPM.
-
-```bash
-npm install -g livedown
-```
-
-See the following link for more information: (https://github.com/shime/vim-livedown).
-
 ## Fuzzy Finding
 Configuration now contains the all important file/code fuzzy finder. To enable:
 
