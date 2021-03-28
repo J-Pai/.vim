@@ -72,10 +72,12 @@ See (https://github.com/Shougo/deoplete.nvim) for how to configure.
 python3 -m pip install python-language-server
 ```
 
-### C/C++
+### Clang C/C++
 
 ```
 sudo apt install clangd
+# or
+sudo apt install clang-tools
 ```
 
 #### CMake Projects
