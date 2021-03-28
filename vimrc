@@ -8,7 +8,7 @@ Plug 'idanarye/vim-merginal'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'shime/vim-livedown'
+Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'elzr/vim-json'
 
 " Color Themes
