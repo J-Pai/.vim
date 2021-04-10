@@ -110,7 +110,9 @@ set nowritebackup
 set shortmess+=c
 
 " Combine sign and number column
-set signcolumn=number
+if has('nvim')
+    set signcolumn=number
+endif
 set colorcolumn=80
 
 if !&scrolloff
