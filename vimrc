@@ -13,6 +13,10 @@ if has('nvim')
 
   " Terminal Plugin
   Plug 'kassio/neoterm'
+
+  " Explorer
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'rbgrouleff/bclose.vim'
 endif
 call plug#end()
 
@@ -117,6 +121,11 @@ if has('nvim')
         call CocActionAsync('doHover')
       endif
     endfunction
+  endif
+
+  " PLUGIN(ranger) Settings
+  if filereadable(expand('~/.vim/plugins/ranger.vim/README.md')) && has('nvim')
+    let g:ranger_replace_netrw = 1
   endif
 endif
 
