@@ -123,12 +123,15 @@ set number " Show line numbers
 set cmdheight=2 " Use 2 rows for cmd window
 set list listchars=tab:>\ ,trail:·,eol:¬ " Show Invisibles Charaters
 
+" Popup Menu Settings
+highlight Pmenu ctermbg=0 ctermfg=white
+
 " Disable Yank after Paste
 vnoremap p "_dP
 
 " EoL Marker
 set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=0
 
 " Standard Tabbing (2 spaces)
 set tabstop=2
