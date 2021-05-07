@@ -12,6 +12,11 @@ Add new plugins to vimrc file's plugin manager section. Specify github page.
 
 If using NeoVim, use following commands after completing setup:
 ```bash
+python3 -m pip install --user pynvim
+sudo apt install silversearcher-ag
+sudo apt install ripgrep
+sudo apt install fzf
+
 mkdir -p ~/.config/nvim/
 ln -s ~/.vim/autoload/ ~/.config/nvim/
 ln -s ~/.vim/colors ~/.config/nvim/
@@ -45,7 +50,7 @@ Add the following to `~/.bash_aliases`:
 if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
   alias h='nvr -o' # Open file in horizontal split
   alias v='nvr -O' # Open file in vertical split
-  alias t='nvr --remote-tab' # Open file in new split
+  alias t='nvr --remote-tab' # Open file in new tab
 fi
 ```
 
