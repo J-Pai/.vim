@@ -81,6 +81,10 @@ if has('nvim')
             \   }
             \ }
     endif
+    let g:coc_user_config['diagnostic.errorSign'] = '>'
+    let g:coc_user_config['diagnostic.warningSign'] = '!'
+    let g:coc_user_config['diagnostic.infoSign'] = '>'
+    let g:coc_user_config['diagnostic.hintSign'] = '>'
 
     inoremap <silent><expr> <TAB>
           \ pumvisible() ? "\<C-n>" :
