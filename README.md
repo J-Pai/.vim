@@ -13,7 +13,7 @@ Add new plugins to vimrc file's plugin manager section. Specify github page.
 If using NeoVim, use following commands after completing setup:
 ```bash
 sudo apt install silversearcher-ag ranger ripgrep fzf
-python3 -m pip install --user pynvim
+python3 -m pip install --user pynvim neovim-remote
 
 mkdir -p ~/.config/nvim/
 ln -s ~/.vim/autoload/ ~/.config/nvim/
@@ -39,16 +39,16 @@ https://hea-www.harvard.edu/~fine/Tech/vi.html
 Use [neovim-remote](https://github.com/mhinz/neovim-remote).
 
 ```bash
-pip3 install neovim-remote
+python3 -m pip install neovim-remote
 ```
 
 Add the following to `~/.bash_aliases`:
 
 ```bash
 if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
-  alias h='nvr -o' # Open file in horizontal split
-  alias v='nvr -O' # Open file in vertical split
-  alias t='nvr --remote-tab' # Open file in new tab
+  alias vims='nvr -O' # Open file in vertical split
+  alias vimvs='nvr -O' # Open file in vertical split
+  alias vim='nvr --remote-tab' # Open file in new tab
 fi
 ```
 
