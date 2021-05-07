@@ -37,6 +37,13 @@ if has('nvim')
     autocmd TermEnter * setlocal nonumber norelativenumber
   endif
 
+  " Special configuration for neovim-remote
+  let $GIT_EDITOR = 'nvr -cc split --remote-wait'
+  let $HGEDITOR = 'nvr -cc split --remote-wait'
+  let $EDITOR = 'nvr -cc split --remote-wait'
+  autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
+  autocmd FileType hgcommit,hgrebase,hgconfig set bufhidden=delete
+
   " PLUGIN(coc.nvim)
   if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
     let g:coc_disable_startup_warning = 1

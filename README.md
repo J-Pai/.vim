@@ -46,7 +46,7 @@ Add the following to `~/.bash_aliases`:
 
 ```bash
 if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
-  alias vims='nvr -O' # Open file in vertical split
+  alias vims='nvr -o' # Open file in horizontal split
   alias vimvs='nvr -O' # Open file in vertical split
   alias vim='nvr --remote-tab' # Open file in new tab
 fi
