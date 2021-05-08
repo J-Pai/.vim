@@ -24,18 +24,21 @@ if has('nvim')
   " nvim Only Settings
 
   " Terminal Settings
-  tnoremap <Esc> <C-\><C-n>
-  tnoremap <C-w> <C-\><C-n><C-w>
-  tnoremap <LeftRelease> <LeftRelease>a
   let g:neoterm_autoinsert = 1
-  let g:neoterm_default_mod = 'rightbelow'
+  let g:neoterm_default_mod = ':belowright'
   let g:neoterm_autoscroll = 1
-  map <C-s> :Tnew <CR>
-  " Set terminal options
+  " Map Esc to exit term mode
+  tnoremap <Esc> <C-\><C-n>
+  " Map move buffer cmd to exit term mode
+  tnoremap <C-w> <C-\><C-n><C-w>
+  " Make clicking a term buffer startinsert
+  tnoremap <LeftRelease> <LeftRelease>a
+  " Open new terminal in same directory as current file.
+  nnoremap <silent><C-s> :lcd %:h \| Tnew <CR>
+  "
   autocmd BufWinEnter,WinEnter term://* startinsert
-  if has('nvim')
-    autocmd TermEnter * setlocal nonumber norelativenumber
-  endif
+  autocmd BufLeave term://* stopinsert
+  autocmd TermEnter term://* setlocal nonumber norelativenumber
 
   " Special configuration for neovim-remote
   let $GIT_EDITOR = 'nvr -cc split --remote-wait'
@@ -117,8 +120,13 @@ if has('nvim')
     endif
 
     nmap <silent> gd :split<CR><Plug>(coc-definition)
+    nmap <silent> ]g <Plug>(coc-diagnostic-next)
+    nmap <silent> [g <Plug>(coc-diagnostic-prev)
+    nmap <silent> \g <Plug>(coc-diagnostic-info)
+
     command! Def call CocActionAsync('jumpDefinition', 'split')
     command! Ref call CocActionAsync('jumpReferences')
+    command! DiagToggle call CocActionAsync('diagnosticToggle')
 
     command! Doc call <SID>ShowDocumentation()
     function! s:ShowDocumentation()
