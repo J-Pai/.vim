@@ -9,7 +9,6 @@ if has('nvim')
 
   " Completion Plugins
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
   " Terminal Plugin
   Plug 'kassio/neoterm'
@@ -52,6 +51,9 @@ if has('nvim')
 
   " PLUGIN(coc.nvim)
   if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
+    " TextEdit might fail if hidden is not set.
+    set hidden
+
     let g:coc_disable_startup_warning = 1
     let g:coc_global_extensions = [
           \   'coc-json',
@@ -125,7 +127,6 @@ if has('nvim')
     nnoremap <silent> gd :split<CR><Plug>(coc-definition)
     nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
     nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
-    nnoremap <silent> \g <Plug>(coc-diagnostic-info)
 
     command! Def call CocActionAsync('jumpDefinition', 'split')
     command! Ref call CocActionAsync('jumpReferences')
@@ -153,6 +154,10 @@ set mouse=a " Enable mouse usage
 set number " Show line numbers
 set cmdheight=2 " Use 2 rows for cmd window
 set list listchars=tab:>\ ,trail:·,eol:¬ " Show Invisibles Charaters
+
+" Mainly for coc.nvim, but also helpful for systems with limited storage.
+set nobackup
+set nowritebackup
 
 " Popup Menu Settings
 highlight Pmenu ctermbg=0 ctermfg=white
