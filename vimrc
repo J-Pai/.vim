@@ -151,6 +151,7 @@ if has('nvim')
 endif
 
 " Common Settings and Functions
+colorscheme pablo
 set encoding=utf-8
 set mouse=a " Enable mouse usage
 set number " Show line numbers
