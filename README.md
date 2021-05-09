@@ -12,7 +12,7 @@ Add new plugins to vimrc file's plugin manager section. Specify github page.
 
 If using NeoVim, use following commands after completing setup:
 ```bash
-sudo apt install silversearcher-ag ranger ripgrep fzf
+sudo apt install ranger ripgrep fzf
 python3 -m pip install --user pynvim neovim-remote
 
 mkdir -p ~/.config/nvim/
@@ -97,10 +97,9 @@ ln -sfn ~/myproject/cmake/build/compile_commands.json ~/myproject/
 ```
 
 ## Fuzzy Finding
-Configuration now contains the all important file/code fuzzy finder. To enable:
+Following is the preferred fuzzy-finders:
 
 ```bash
-sudo apt install silversearcher-ag
 sudo apt install ripgrep
 sudo apt install fzf
 ```
