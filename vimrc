@@ -23,10 +23,13 @@ call plug#end()
 if has('nvim')
   " nvim Only Settings
 
-  " Terminal Settings
-  let g:neoterm_autoinsert = 1
-  let g:neoterm_default_mod = ':belowright'
-  let g:neoterm_autoscroll = 1
+  " Terminal Settings (neoterm + vanilla)
+  if filereadable(expand('~/.vim/plugins/neoterm/README.md'))
+    let g:neoterm_autoinsert = 1
+    let g:neoterm_default_mod = ':belowright'
+    let g:neoterm_autoscroll = 1
+  endif
+
   " Map Esc to exit term mode
   tnoremap <Esc> <C-\><C-n>
   " Map move buffer cmd to exit term mode
@@ -119,10 +122,10 @@ if has('nvim')
       inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
     endif
 
-    nmap <silent> gd :split<CR><Plug>(coc-definition)
-    nmap <silent> ]g <Plug>(coc-diagnostic-next)
-    nmap <silent> [g <Plug>(coc-diagnostic-prev)
-    nmap <silent> \g <Plug>(coc-diagnostic-info)
+    nnoremap <silent> gd :split<CR><Plug>(coc-definition)
+    nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
+    nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
+    nnoremap <silent> \g <Plug>(coc-diagnostic-info)
 
     command! Def call CocActionAsync('jumpDefinition', 'split')
     command! Ref call CocActionAsync('jumpReferences')
