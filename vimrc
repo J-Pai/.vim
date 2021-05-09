@@ -69,7 +69,7 @@ if has('nvim')
             \       'command': '/google/bin/releases/editor-devtools/ciderlsp',
             \       'args': [
             \         '--tooltag=coc-nvim',
-            \         '--noforward_sync_responses'
+            \         '--noforward_sync_responses',
             \       ],
             \       'filetypes': [
             \         'c',
@@ -80,24 +80,26 @@ if has('nvim')
             \         'proto',
             \         'python',
             \         'textproto',
-            \         'bzl'
-            \       ]
-            \     }
-            \   }
+            \         'bzl',
+            \         'borg',
+            \         'starlark',
+            \       ],
+            \     },
+            \   },
             \ }
     else
       let g:coc_user_config = {
             \   'languageserver': {
             \     'python': {
             \       'command': '~/.local/bin/pyls',
-            \       'filetypes': ['python']
+            \       'filetypes': ['python'],
             \     },
             \     'clangd': {
             \       'command': 'clangd',
             \       'rootPatterns' : ['compile_commands.json'],
-            \       'filetypes': ['c', 'cc', 'c++', 'cpp']
-            \     }
-            \   }
+            \       'filetypes': ['c', 'cc', 'c++', 'cpp'],
+            \     },
+            \   },
             \ }
     endif
     let g:coc_user_config['diagnostic.errorSign'] = '>'
