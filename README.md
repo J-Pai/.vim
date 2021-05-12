@@ -13,6 +13,7 @@ Add new plugins to vimrc file's plugin manager section. Specify github page.
 If using NeoVim, use following commands after completing setup:
 ```bash
 sudo apt install ranger ripgrep fzf
+sudo apt install nodejs npm
 python3 -m pip install --user pynvim neovim-remote
 
 mkdir -p ~/.config/nvim/
@@ -102,6 +103,18 @@ Following is the preferred fuzzy-finders:
 ```bash
 sudo apt install ripgrep
 sudo apt install fzf
+```
+
+Create `~/.fzf.bash` and use the following as it's contents:
+
+```bash
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/usr/share/doc/fzf/examples/completion.bash" 2> /dev/null
+
+# Key bindings
+# ------------
+source "/usr/share/doc/fzf/examples/key-bindings.bash"
 ```
 
 ## Ranger Filesystem to replace netrw
