@@ -16,6 +16,8 @@ sudo apt install ranger ripgrep fzf
 sudo apt install nodejs npm
 python3 -m pip install --user pynvim neovim-remote
 
+ln -s ~/.vim/tmux.conf ~/.tmux.conf
+
 mkdir -p ~/.config/nvim/
 ln -s ~/.vim/autoload/ ~/.config/nvim/
 ln -s ~/.vim/colors ~/.config/nvim/
