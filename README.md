@@ -45,7 +45,7 @@ Use [neovim-remote](https://github.com/mhinz/neovim-remote).
 python3 -m pip install neovim-remote
 ```
 
-Add the following to `~/.bash_aliases`:
+Add the following to `~/.bashrc`:
 
 ```bash
 if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
@@ -117,6 +117,12 @@ Create `~/.fzf.bash` and use the following as it's contents:
 # Key bindings
 # ------------
 source "/usr/share/doc/fzf/examples/key-bindings.bash"
+```
+
+Add the following the `~/.bashrc`.
+
+```
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 ```
 
 ## Ranger Filesystem to replace netrw
