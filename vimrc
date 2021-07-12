@@ -83,6 +83,7 @@ if has('nvim')
             \         'bzl',
             \         'borg',
             \         'starlark',
+            \         'js',
             \       ],
             \     },
             \   },
