@@ -158,6 +158,7 @@ set mouse=a " Enable mouse usage
 set number " Show line numbers
 set cmdheight=2 " Use 2 rows for cmd window
 set list listchars=tab:>\ ,trail:·,eol:¬ " Show Invisibles Charaters
+set synmaxcol=256 " Keep big files loading fast by limiting syntax highlighting
 
 " Mainly for coc.nvim, but also helpful for systems with limited storage.
 set nobackup
