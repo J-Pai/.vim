@@ -99,6 +99,15 @@ Link the `compile_commands.json` file to the root of the project.
 ln -sfn ~/myproject/cmake/build/compile_commands.json ~/myproject/
 ```
 
+### General Makefile/Non-Clang Projects
+
+Use `bear` to generate the `compile_commands.json` file.
+
+```bash
+sudo apt install bear
+bear -- <BUILD_COMMAND>
+```
+
 ## Fuzzy Finding
 Following is the preferred fuzzy-finders:
 
