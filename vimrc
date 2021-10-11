@@ -220,4 +220,4 @@ function! s:StripTrailingWhitespaces()
 endfun
 
 " Combine system clipboard
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
