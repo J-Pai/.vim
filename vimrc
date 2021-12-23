@@ -98,7 +98,7 @@ if has('nvim')
             \     'clangd': {
             \       'command': 'clangd',
             \       'rootPatterns' : ['compile_commands.json'],
-            \       'filetypes': ['c', 'cc', 'c++', 'cpp', 'S', 'ld'],
+            \       'filetypes': ['c', 'cc', 'c++', 'cpp', 'S', 'ld', 'h', 'hh', 'hpp'],
             \     },
             \   },
             \ }
