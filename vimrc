@@ -1,3 +1,5 @@
+let ssh = $SSH_TTY
+
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
 " vim and nvim Common Plugins
@@ -220,4 +222,8 @@ function! s:StripTrailingWhitespaces()
 endfun
 
 " Combine system clipboard
-" set clipboard+=unnamedplus
+if empty(ssh)
+  set clipboard+=unnamedplus
+else
+  echo "CONNECTED VIA SSH"
+endif
