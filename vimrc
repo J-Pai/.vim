@@ -221,6 +221,21 @@ function! s:StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 
+function! UseTabChar(width)
+  let &tabstop=a:width
+  let &shiftwidth=a:width
+  set noexpandtab
+endfunction
+
+function! UseTabDefault()
+  set tabstop=2
+  set shiftwidth=2
+  set expandtab
+endfunction
+
+command! -nargs=1 TabChar call UseTabChar(<f-args>)
+command! TabDef call UseTabDefault()
+
 " Combine system clipboard
 if empty(ssh)
   set clipboard+=unnamedplus
