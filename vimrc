@@ -174,7 +174,7 @@ vnoremap p "_dP
 
 " EoL Marker
 set colorcolumn=80
-highlight ColorColumn ctermbg=0
+highlight ColorColumn ctermbg=DarkGray
 
 " Standard Tabbing (2 spaces)
 set tabstop=2
