@@ -61,6 +61,7 @@ if has('nvim')
           \   'coc-json',
           \   'coc-vimlsp',
           \   'coc-cmake',
+          \   'coc-clangd',
           \ ]
 
     " coc-settings.json
@@ -97,11 +98,6 @@ if has('nvim')
             \       'command': '~/.local/bin/pyls',
             \       'filetypes': ['python'],
             \     },
-            \     'clangd': {
-            \       'command': 'clangd',
-            \       'rootPatterns' : ['compile_commands.json'],
-            \       'filetypes': ['c', 'cc', 'c++', 'cpp', 'S', 'ld', 'h', 'hh', 'hpp'],
-            \     },
             \   },
             \ }
     endif
@@ -135,6 +131,7 @@ if has('nvim')
 
     command! Def call CocActionAsync('jumpDefinition', 'split')
     command! Ref call CocActionAsync('jumpReferences')
+    command! HdrSrc CocCommand clangd.switchSourceHeader
     command! DiagToggle call CocActionAsync('diagnosticToggle')
 
     command! Doc call <SID>ShowDocumentation()
