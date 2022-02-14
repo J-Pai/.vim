@@ -178,6 +178,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab " Use spaces for tabs.
 
+autocmd BufNewFile,BufRead BUILD,*.bzl setlocal tabstop=4 shiftwidth=4 expandtab
+
 " Split Control
 set splitbelow
 set splitright
