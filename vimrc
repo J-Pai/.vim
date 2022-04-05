@@ -239,5 +239,4 @@ command! TabDef call UseTabDefault()
 if empty(ssh)
   set clipboard+=unnamedplus
 else
-  echo "CONNECTED VIA SSH"
 endif
