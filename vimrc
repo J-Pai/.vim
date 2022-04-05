@@ -154,6 +154,9 @@ endif
 colorscheme pablo
 set encoding=utf-8
 set mouse=a " Enable mouse usage
+if !has('nvim')
+  set ttymouse=sgr
+endif
 set number " Show line numbers
 set cmdheight=2 " Use 2 rows for cmd window
 set list listchars=tab:>\ ,trail:·,eol:¬ " Show Invisibles Charaters
