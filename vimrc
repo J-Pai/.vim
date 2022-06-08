@@ -62,6 +62,7 @@ if has('nvim')
           \   'coc-vimlsp',
           \   'coc-cmake',
           \   'coc-clangd',
+          \   'coc-go',
           \ ]
 
     " coc-settings.json
