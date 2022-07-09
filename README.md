@@ -19,10 +19,8 @@ python3 -m pip install --user pynvim neovim-remote
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
 
 mkdir -p ~/.config/nvim/
-ln -s ~/.vim/autoload/ ~/.config/nvim/
-ln -s ~/.vim/colors ~/.config/nvim/
-ln -s ~/.vim/syntax ~/.config/nvim/
-ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
 ## Project Specific NeoVim/Vim Configuration
