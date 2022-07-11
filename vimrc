@@ -2,23 +2,168 @@ let ssh = $SSH_TTY
 
 " Plugin Manager
 call plug#begin('~/.vim/plugins')
+" vim and nvim Common Plugins
 Plug 'itchyny/lightline.vim' " vim statusbar
 Plug 'tpope/vim-fugitive' " git plugin
+
+if has('nvim')
+  " nvim Only Plugins
+
+  " Completion Plugins
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+  " Terminal Plugin
+  Plug 'kassio/neoterm'
+
+  " Explorer
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'rbgrouleff/bclose.vim'
+endif
 call plug#end()
 
+if has('nvim')
+  " nvim Only Settings
+
+  " Terminal Settings (neoterm + vanilla)
+  if filereadable(expand('~/.vim/plugins/neoterm/README.md'))
+    let g:neoterm_autoinsert = 1
+    let g:neoterm_default_mod = ':belowright'
+    let g:neoterm_autoscroll = 1
+  endif
+
+  " Map Esc to exit term mode
+  tnoremap <Esc> <C-\><C-n>
+  " Map move buffer cmd to exit term mode
+  tnoremap <C-w> <C-\><C-n><C-w>
+  " Make clicking a term buffer startinsert
+  tnoremap <LeftRelease> <LeftRelease>a
+  " Open new terminal in same directory as current file.
+  nnoremap <silent><C-s> :lcd %:h \| Tnew <CR>
+  "
+  autocmd BufWinEnter,WinEnter term://* startinsert
+  autocmd BufLeave term://* stopinsert
+  autocmd TermEnter term://* setlocal nonumber norelativenumber
+
+  " Special configuration for neovim-remote
+  let $GIT_EDITOR = 'nvr -cc split --remote-wait'
+  let $HGEDITOR = 'nvr -cc split --remote-wait'
+  let $EDITOR = 'nvr -cc split --remote-wait'
+  autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
+  autocmd FileType hgcommit,hgrebase,hgconfig set bufhidden=delete
+
+  " PLUGIN(coc.nvim)
+  if filereadable(expand('~/.vim/plugins/coc.nvim/Readme.md'))
+    " TextEdit might fail if hidden is not set.
+    set hidden
+
+    let g:coc_disable_startup_warning = 1
+    let g:coc_global_extensions = [
+          \   'coc-json',
+          \   'coc-vimlsp',
+          \   'coc-cmake',
+          \   'coc-clangd',
+          \   'coc-go',
+          \ ]
+
+    " coc-settings.json
+    if getcwd() =~ '^/google'
+      let g:coc_user_config = {
+            \   'languageserver': {
+            \     'google': {
+            \       'command': '/google/bin/releases/cider/ciderlsp/ciderlsp',
+            \       'args': [
+            \         '--tooltag=coc-nvim',
+            \         '--noforward_sync_responses',
+            \       ],
+            \       'filetypes': [
+            \         'c',
+            \         'cc',
+            \         'cpp',
+            \         'go',
+            \         'java',
+            \         'proto',
+            \         'python',
+            \         'textproto',
+            \         'bzl',
+            \         'borg',
+            \         'starlark',
+            \         'js',
+            \       ],
+            \     },
+            \   },
+            \ }
+    else
+      let g:coc_user_config = {
+            \   'languageserver': {
+            \     'python': {
+            \       'command': '~/.local/bin/pyls',
+            \       'filetypes': ['python'],
+            \     },
+            \   },
+            \ }
+    endif
+    let g:coc_user_config['diagnostic.errorSign'] = '>'
+    let g:coc_user_config['diagnostic.warningSign'] = '!'
+    let g:coc_user_config['diagnostic.infoSign'] = '>'
+    let g:coc_user_config['diagnostic.hintSign'] = '>'
+
+    inoremap <silent><expr> <TAB>
+          \ pumvisible() ? "\<C-n>" :
+          \ <SID>check_back_space() ? "\<TAB>" :
+          \ coc#refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+    function! s:check_back_space() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+    inoremap <silent><expr> <c-space> coc#refresh()
+
+    if exists('*complete_info')
+      inoremap <expr> <cr> complete_info()['selected'] != '-1' ? "\<C-y>" : "\<C-g>u\<CR>"
+    else
+      inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    endif
+
+    nnoremap <silent> gd :split<CR><Plug>(coc-definition)
+    nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
+    nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
+
+    command! Def call CocActionAsync('jumpDefinition', 'split')
+    command! Ref call CocActionAsync('jumpReferences')
+    command! HdrSrc CocCommand clangd.switchSourceHeader
+    command! DiagToggle call CocActionAsync('diagnosticToggle')
+
+    command! Doc call <SID>ShowDocumentation()
+    function! s:ShowDocumentation()
+      if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+      else
+        call CocActionAsync('doHover')
+      endif
+    endfunction
+  endif
+
+  " PLUGIN(ranger) Settings
+  if filereadable(expand('~/.vim/plugins/ranger.vim/README.md')) && has('nvim')
+    let g:ranger_replace_netrw = 1
+  endif
+endif
+
 " Common Settings and Functions
-set t_Co=256
-set background=dark
 colorscheme pablo
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
 set encoding=utf-8
 set mouse=a " Enable mouse usage
+if !has('nvim')
+  set ttymouse=sgr
+endif
 set number " Show line numbers
 set cmdheight=2 " Use 2 rows for cmd window
 set list listchars=tab:>\ ,trail:·,eol:¬ " Show Invisibles Charaters
 set synmaxcol=256 " Keep big files loading fast by limiting syntax highlighting
 
+" Mainly for coc.nvim, but also helpful for systems with limited storage.
 set nobackup
 set nowritebackup
 
