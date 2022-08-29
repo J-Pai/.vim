@@ -5,6 +5,9 @@ call plug#begin('~/.vim/plugins')
 " vim and nvim Common Plugins
 Plug 'itchyny/lightline.vim' " vim statusbar
 Plug 'tpope/vim-fugitive' " git plugin
+Plug 'jremmen/vim-ripgrep' " RG plugin
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " File search plugin
+Plug 'junegunn/fzf.vim'
 
 if has('nvim')
   " nvim Only Plugins
@@ -63,6 +66,7 @@ if has('nvim')
           \   'coc-cmake',
           \   'coc-clangd',
           \   'coc-go',
+          \   'coc-rust-analyzer',
           \ ]
 
     " coc-settings.json
@@ -100,6 +104,10 @@ if has('nvim')
             \       'filetypes': ['python'],
             \     },
             \   },
+            \   'rust-analyzer.checkOnSave.allTargets': v:false,
+            \   'rust-analyzer.checkOnSave.extraArgs': [
+            \       '--bins',
+            \   ]
             \ }
     endif
     let g:coc_user_config['diagnostic.errorSign'] = '>'
@@ -230,6 +238,12 @@ function! UseTabChar(width)
   set noexpandtab
 endfunction
 
+function! UseTabSpace(width)
+  let &tabstop=a:width
+  let &shiftwidth=a:width
+  set expandtab
+endfunction
+
 function! UseTabDefault()
   set tabstop=2
   set shiftwidth=2
@@ -237,6 +251,7 @@ function! UseTabDefault()
 endfunction
 
 command! -nargs=1 TabChar call UseTabChar(<f-args>)
+command! -nargs=1 TabSpace call UseTabSpace(<f-args>)
 command! TabDef call UseTabDefault()
 
 " Combine system clipboard
