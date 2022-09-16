@@ -117,24 +117,19 @@ if has('nvim')
     let g:coc_user_config['diagnostic.infoSign'] = '>'
     let g:coc_user_config['diagnostic.hintSign'] = '>'
 
-    inoremap <silent><expr> <TAB>
-          \ pumvisible() ? "\<C-n>" :
-          \ <SID>check_back_space() ? "\<TAB>" :
+    inoremap <silent><expr> <Tab>
+          \ coc#pum#visible() ? coc#pum#next(1) :
+          \ CheckBackspace() ? "\<Tab>" :
           \ coc#refresh()
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<Tab>"
 
-    function! s:check_back_space() abort
-      let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~# '\s'
+    function! CheckBackspace() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
     endfunction
 
-    inoremap <silent><expr> <c-space> coc#refresh()
 
-    if exists('*complete_info')
-      inoremap <expr> <cr> complete_info()['selected'] != '-1' ? "\<C-y>" : "\<C-g>u\<CR>"
-    else
-      inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-    endif
+    inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
     nnoremap <silent> gd :split<CR><Plug>(coc-definition)
     nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -178,7 +173,7 @@ set nobackup
 set nowritebackup
 
 " Popup Menu Settings
-highlight Pmenu ctermbg=0 ctermfg=white
+highlight Pmenu ctermbg=grey ctermfg=white
 
 " Disable Yank after Paste
 vnoremap p "_dP
