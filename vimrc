@@ -187,13 +187,6 @@ vnoremap p "_dP
 set colorcolumn=80
 highlight ColorColumn ctermbg=DarkGray
 
-" Standard Tabbing (2 spaces)
-set tabstop=2
-set shiftwidth=2
-set expandtab " Use spaces for tabs.
-
-autocmd BufNewFile,BufRead BUILD,*.bzl setlocal tabstop=4 shiftwidth=4 expandtab
-
 " Split Control
 set splitbelow
 set splitright
@@ -281,3 +274,11 @@ else
   endfunction
   autocmd TextYankPost * call CopyYank()
 endif
+
+" Standard Tabbing (2 spaces)
+set tabstop=2
+set shiftwidth=2
+set expandtab " Use spaces for tabs.
+
+autocmd BufNewFile,BufRead BUILD,*.bzl setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd BufNewFile,BufRead *.py setlocal tabstop=2 shiftwidth=2 expandtab
