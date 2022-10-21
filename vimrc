@@ -69,6 +69,7 @@ if has('nvim')
           \   'coc-clangd',
           \   'coc-go',
           \   'coc-rust-analyzer',
+          \   'coc-tsserver',
           \ ]
 
     " coc-settings.json
