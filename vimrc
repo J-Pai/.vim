@@ -70,6 +70,7 @@ if has('nvim')
           \   'coc-go',
           \   'coc-rust-analyzer',
           \   'coc-tsserver',
+          \   'coc-pyls',
           \ ]
 
     " coc-settings.json
@@ -102,10 +103,6 @@ if has('nvim')
     else
       let g:coc_user_config = {
             \   'languageserver': {
-            \     'python': {
-            \       'command': '~/.local/bin/pyls',
-            \       'filetypes': ['python'],
-            \     },
             \   },
             \   'rust-analyzer.checkOnSave.allTargets': v:false,
             \   'rust-analyzer.checkOnSave.extraArgs': [
